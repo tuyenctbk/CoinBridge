@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Bridge Arch in center -->
+    <path
+        android:pathData="M 30,62 C 38,44 70,44 78,62"
+        android:strokeWidth="4"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Left Coin ($ Fiat) -->
+    <path
+        android:pathData="M 36,52 A 13,13 0 1,0 36,52.01 Z"
+        android:fillColor="#10B981" />
+    <path
+        android:pathData="M 36,44.5 C 34.5,44.5 33.5,45.3 33.5,46.5 C 33.5,47.8 34.8,48.3 36,48.8 C 37.2,49.3 38.5,49.8 38.5,51.2 C 38.5,52.4 37.3,53.3 36,53.3 M 36,43.5 V 54.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Right Coin (₿ Crypto) -->
+    <path
+        android:pathData="M 72,52 A 13,13 0 1,0 72,52.01 Z"
+        android:fillColor="#F59E0B" />
+    <path
+        android:pathData="M 68.5,46 H 73 C 74.3,46 75.3,46.8 75.3,48 C 75.3,49 74.5,49.7 73.5,49.9 C 74.8,50.2 75.7,51 75.7,52.3 C 75.7,53.6 74.5,54.5 73,54.5 H 68.5 M 70,44.5 V 56 M 72.5,44.5 V 56"
+        android:strokeWidth="1.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Swap Exchange arrows above bridge -->
+    <path
+        android:pathData="M 44,38 H 62 M 58,34 L 62,38 L 58,42"
+        android:strokeWidth="2"
+        android:strokeColor="#6366F1"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M 64,68 H 46 M 50,64 L 46,68 L 50,72"
+        android:strokeWidth="2"
+        android:strokeColor="#6366F1"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>

@@ -1,0 +1,320 @@
+"Language","Language_Code","Title","Short_Description","Full_Description"
+"English","en-US","CoinBridge: Currency Converter","Offline currency and unit converter with trends, bill splitter, and security","CoinBridge is a clean, private, and offline-first currency and physical unit converter designed for travelers, shoppers, and finance enthusiasts.
+
+KEY FEATURES:
+
+• Instant Currency Conversion
+Convert between over 150 fiat currencies and major cryptocurrencies including Bitcoin (BTC) and Ethereum (ETH). Exchange rates are automatically cached for complete offline reliability.
+
+• Live Rate Trend Visualizations
+Explore historical rate movements with interactive 7-day, 30-day, 90-day, and 1-year rate charts to monitor market dynamics.
+
+• Smart Bill & Tip Splitter
+Quickly split restaurant dining bills and compute tips with friends. Seamlessly convert totals into your home currency.
+
+• Multi-Category Unit Converter
+Effortlessly convert between standard physical measurement units:
+- Weight & Mass (kg, lb, g, oz, st)
+- Length & Distance (km, m, cm, mi, ft, in)
+- Volume & Capacity (l, ml, gal, fl oz, cup)
+- Temperature (Celsius, Fahrenheit, Kelvin)
+- Speed (km/h, mph, m/s, knots)
+
+• Quick Shake Gesture
+Shake your device to instantly invert or swap base and target currencies without tapping. Sensitivity is fully customizable.
+
+• Biometric Privacy Lock
+Protect your financial conversion records and custom pair preferences using Android fingerprint, facial authentication, or device PIN.
+
+• 100% Ad-Free & Private
+No advertisements, no user tracking, and no external account sign-ins required. All calculation logs remain strictly on your device."
+"Spanish","es-ES","CoinBridge: Conversor Divisas","Conversor de divisas y unidades sin conexion con historial y division de cuenta","CoinBridge es un conversor de divisas y unidades de medida rapido, privado y sin conexion, ideal para viajes, compras y finanzas.
+
+CARACTERISTICAS PRINCIPALES:
+
+• Conversion instantanea de divisas
+Calcula tipos de cambio entre mas de 150 monedas fiduciarias y criptomonedas como Bitcoin (BTC) y Ethereum (ETH). Las tasas se almacenan localmente para operar sin conexion.
+
+• Graficos de tendencias historicas
+Visualiza graficos interactivos a 7 dias, 30 dias, 90 dias y 1 ano para analizar las fluctuaciones del mercado cambiario.
+
+• Divisor inteligente de cuentas y propinas
+Divide gastos en restaurantes y calcula propinas de forma automatica, con conversion directa a tu moneda de origen.
+
+• Conversor universal de unidades
+Realiza conversiones precisas entre diferentes categorias:
+- Peso y Masa (kg, lb, g, oz, st)
+- Longitud y Distancia (km, m, cm, mi, ft, in)
+- Volumen y Capacidad (l, ml, gal, fl oz, taza)
+- Temperatura (Celsius, Fahrenheit, Kelvin)
+- Velocidad (km/h, mph, m/s, nudos)
+
+• Gesto de agitacion rapido
+Agita el dispositivo para intercambiar las monedas seleccionadas al instante. Sensibilidad ajustable.
+
+• Bloqueo biometrico de privacidad
+Protege tu historial de calculo y pares favoritos mediante huella dactilar, reconocimiento facial o codigo PIN.
+
+• Sin publicidad y 100% privado
+Sin anuncios comerciales, sin rastreo de usuarios y sin registro de cuentas. Todos tus datos permanecen en tu dispositivo."
+"French","fr-FR","CoinBridge: Devises et Taux","Convertisseur de devises et unites hors-ligne avec tendances et addition","CoinBridge est un convertisseur de devises et d unites moderne, prive et fonctionnant entierement hors-ligne, ideal pour les voyages et les achats.
+
+FONCTIONNALITES PRINCIPALES :
+
+• Conversion instantanee de devises
+Convertissez plus de 150 devises internationales et cryptomonnaies majeures comme Bitcoin (BTC) et Ethereum (ETH). Les taux sont conserves en memoire pour une utilisation sans connexion internet.
+
+• Graphiques et tendances historiques
+Consultez l evolution des cours a travers des graphiques clairs sur 7 jours, 30 jours, 90 jours et 1 an.
+
+• Partage intelligent de l addition et pourboires
+Calculez facilement le pourboire et partagez l addition entre amis, avec conversion directe dans votre monnaie locale.
+
+• Convertisseur universel d unites
+Convertissez rapidement vos mesures du quotidien :
+- Poids et Masse (kg, lb, g, oz, st)
+- Longueur et Distance (km, m, cm, mi, ft, in)
+- Volume et Capacite (l, ml, gal, fl oz, tasse)
+- Temperature (Celsius, Fahrenheit, Kelvin)
+- Vitesse (km/h, mph, m/s, noeuds)
+
+• Geste de secousse
+Secouez simplement votre smartphone pour inverser les devises selectionnees. La sensibilite est reglable selon vos preferences.
+
+• Verrouillage biometric securise
+Securisez vos historiques de conversion grace au capteur d empreintes digitales ou a la reconnaissance faciale Android.
+
+• 100% Sans Publicite et Respectueux de la vie privee
+Aucune annonce commerciale, aucun suivi publicitaire et aucune inscription requise."
+"German","de-DE","CoinBridge: Währungsrechner","Offline-Waehrungs- und Einheitenrechner mit Trends, Trinkgeld und Schutz","CoinBridge ist ein schneller, privater und offline-faehiger Waehrungs- und Einheitenrechner fuer Reisen, Finanzen und Alltag.
+
+HAUPTMERKMALE:
+
+• Schnelle Waehrungsumrechnung
+Rechnen Sie zwischen ueber 150 Landeswaehrungen und fuehrenden Kryptowaehrungen wie Bitcoin (BTC) und Ethereum (ETH) um. Wechselkurse werden lokal zwischengespeichert.
+
+• Historische Wechselkurstrends
+Verfolgen Sie Kursentwicklungen mit uebersichtlichen Diagrammen fuer 7 Tage, 30 Tage, 90 Tage und 1 Jahr.
+
+• Smarter Rechnungs- und Trinkgeldrechner
+Teilen Sie Restaurantrechnungen praezise auf und berechnen Sie Trinkgelder mit automatischer Umrechnung in Ihre Heimatwaehrung.
+
+• Universeller Einheitenrechner
+Unterstuetzt die wichtigsten physikalischen Masseinheiten:
+- Gewicht & Masse (kg, lb, g, oz, st)
+- Laenge & Distanz (km, m, cm, mi, ft, in)
+- Volumen & Hohlmasse (l, ml, gal, fl oz, Tasse)
+- Temperatur (Celsius, Fahrenheit, Kelvin)
+- Geschwindigkeit (km/h, mph, m/s, Knoten)
+
+• Schuettel-Geste
+Schuetteln Sie das Smartphone fuer einen sofortigen Waehrungstausch. Die Empfindlichkeit laesst sich flexibel anpassen.
+
+• Biometrische App-Sperre
+Schuetzen Sie Ihre Finanzdaten und Umrechnungshistorie per Fingerabdruck, Gesichtserkennung oder PIN.
+
+• 100% Werbefrei & Datenschutzfreundlich
+Keine Werbebanner, kein Nutzer-Tracking und keine Registrierung notwendig. Ihre Daten verbleiben auf Ihrem Geraet."
+"Japanese","ja-JP","CoinBridge: 為替換算と単位計算","オフライン対応の為替換算・単位計算・割り勘・推移チャートツール","CoinBridgeは、完全オフライン対応・広告なし・プライバシー保護設計の通貨＆単位換算ツールです。海外旅行やショッピング、日々のビジネス計算を強力にサポートします。
+
+主な機能：
+
+• 高速な為替レート換算
+150種類以上の世界各国の法定通貨および主要な暗号資産（Bitcoin、Ethereumなど）を即座に相互換算。レートは自動保存され、機内や電波の届かないオフライン環境でもそのまま使えます。
+
+• 過去のレート推移チャート
+7日間、30日間、90日間、1年間の為替推移グラフを搭載。相場の動きをひと目で把握できます。
+
+• 割り勘＆チップ計算
+食事代金の割り勘人数やチップ比率をすばやく計算。現地通貨から自国通貨への即時換算も可能です。
+
+• 多機能な単位換算
+日常や旅行で役立つ各種単位をスムーズに換算：
+- 重さ・質量 (kg, lb, g, oz, st)
+- 長さ・距離 (km, m, cm, mi, ft, in)
+- 体積・容量 (l, ml, gal, fl oz, cup)
+- 温度 (摂氏, 華氏, ケルビン)
+- 速度 (km/h, mph, m/s, ノット)
+
+• シェイク操作で瞬時に入れ替え
+端末を軽く振るだけで基準通貨と換算通貨を即座にスワップ。感度設定も細かく調整可能です。
+
+• 生体認証セキュリティロック
+指紋認証や顔認証、端末パスコードで履歴と設定を保護。第三者による閲覧を防ぎます。
+
+• 完全広告ゼロ・追跡なし
+広告表示や個人情報の収集は一切行いません。すべての履歴データはお使いの端末内のみに安全に保存されます。"
+"Chinese Simplified","zh-CN","CoinBridge: 实时汇率与单位换算","支持离线运行的实时汇率换算、多功能单位计算、分账小费与走势图表","CoinBridge 是一款纯净、高效且完全支持离线使用的多功能汇率与单位换算工具，专为海淘、跨国商旅和日常财务计算而设计。
+
+核心功能特性：
+
+• 即时多货币汇率换算
+支持全球超过 150 种法定货币以及比特币（BTC）、以太坊（ETH）等主流数字货币。汇率数据自动本地缓存，在飞行模式或无网络环境下依然顺畅可用。
+
+• 历史汇率走势图表
+提供 7 天、30 天、90 天及 1 年周期的汇率走势曲线，让汇率波动与趋势一目了然。
+
+• 智能分账与小费计算器
+聚餐结账时快速分摊账单并计算小费，同时一键折算为本国货币，省时省心。
+
+• 全能物理单位换算
+涵盖日常及专业场景的常用单位体系：
+- 重量与质量（千克、磅、克、盎司、英石）
+- 长度与距离（公里、米、厘米、英里、英尺、英寸）
+- 容积与体积（升、毫升、加仑、液体盎司、杯）
+- 温度换算（摄氏度、华氏度、开氏度）
+- 速度换算（公里/小时、英里/小时、米/秒、节）
+
+• 摇一摇手势快捷对调
+晃动手机即可瞬间切换基准货币与目标货币，灵敏度可按需自由调节。
+
+• 生物识别隐私锁
+支持通过 Android 指纹识别、人脸识别或锁屏密码锁定账目与历史记录，全面守护财务隐私。
+
+• 100% 纯净无广告 • 零追踪
+绝无弹窗推广，不收集用户个人数据，无需注册账户，所有换算日志均严格保存在您的本地设备中。"
+"Portuguese","pt-BR","CoinBridge: Câmbio de Moedas","Conversor de moedas e unidades offline com historico e divisao de conta","CoinBridge e um conversor de moedas e unidades rapido, confiavel e offline, desenvolvido para quem busca praticidade em viagens e compras.
+
+PRINCIPAIS RECURSOS:
+
+• Conversao instantanea de moedas
+Consulte cotacoes entre mais de 150 moedas fiduciarias e criptomoedas como Bitcoin (BTC) e Ethereum (ETH). Dados salvos localmente para funcionamento 100% offline.
+
+• Graficos de historico cambial
+Acompanhe variacoes das taxas com graficos interativos de 7 dias, 30 dias, 90 dias e 1 ano.
+
+• Divisao inteligente de contas e gorjetas
+Calcule gorjetas e divida contas com amigos de forma simples, com conversao direta para a sua moeda local.
+
+• Conversor universal de unidades
+Converta medidas essenciais com precisao:
+- Peso e Massa (kg, lb, g, oz, st)
+- Comprimento e Distancia (km, m, cm, mi, ft, in)
+- Volume e Capacidade (l, ml, gal, fl oz, xicara)
+- Temperatura (Celsius, Fahrenheit, Kelvin)
+- Velocidade (km/h, mph, m/s, nos)
+
+• Gesto de agitacao rapido
+Agite o celular para inverter as moedas instantaneamente. Sensibilidade totalmente ajustavel.
+
+• Bloqueio biometrico de privacidade
+Proteja seus registros de conversao com biometria facial, impressao digital ou codigo PIN.
+
+• 100% Sem Anuncios e Seguro
+Sem propagandas, sem coleta de dados pessoais e sem necessidade de cadastro."
+"Italian","it-IT","CoinBridge: Valute e Tassi","Convertitore di valute e unita offline con grafici e divisione del conto","CoinBridge e un convertitore di valute e unita di misura moderno, veloce e utilizzabile offline, ideale per viaggi, acquisti e finanza personale.
+
+CARATTERISTICHE PRINCIPALI:
+
+• Conversione istantanea delle valute
+Supporta oltre 150 valute mondiali e le principali criptovalute come Bitcoin (BTC) ed Ethereum (ETH). Tassi archiviati localmente per l uso senza connessione.
+
+• Grafici e tendenze storiche
+Monitora le fluttuazioni dei tassi di cambio su archi temporali di 7 giorni, 30 giorni, 90 giorni e 1 anno.
+
+• Divisione intelligente del conto e mance
+Calcola le mance e suddividi i conti tra amici al ristorante con conversione immediata nella tua valuta nazionale.
+
+• Convertitore versatile di unita
+Supporta le principali unita di misura fisiche:
+- Peso e Massa (kg, lb, g, oz, st)
+- Lunghezza e Distanza (km, m, cm, mi, ft, in)
+- Volume e Capacita (l, ml, gal, fl oz, tazza)
+- Temperatura (Celsius, Fahrenheit, Kelvin)
+- Velocita (km/h, mph, m/s, nodi)
+
+• Gesto di scuotimento
+Scuoti lo smartphone per scambiare immediatamente le valute selezionate. Sensibilita regolabile.
+
+• Blocco biometrico per la privacy
+Metti al sicuro la cronologia delle tue conversioni tramite impronta digitale, riconoscimento facciale o codice PIN.
+
+• Senza Pubblicita e 100% Privato
+Nessun annuncio pubblicitario, nessun tracciamento dei dati e nessuna registrazione obbligatoria."
+"Vietnamese","vi-VN","CoinBridge: Đổi Tỷ Giá Tiền Tệ","Cong cu chuyen doi tien te va don vi ngoai tuyen, chia hoa don va bao mat","CoinBridge la ung dung chuyen doi ty gia tien te va don vi do luong hien dai, hoat dong hoan toan ngoai tuyen va bao mat tuyet doi.
+
+CAC TINH NANG NOI BAT:
+
+• Quy doi ty gia tuc thi
+Chuyen doi giua hon 150 loai tien te the gioi cung cac dong tien dien tu pho bien nhu Bitcoin (BTC), Ethereum (ETH). Ty gia duoc luu tren thiet bi de su dung muot ma ngay ca khi khong co mang Internet.
+
+• Bieu do xu huong ty gia lich su
+Theo doi bien dong ty gia truc quan qua cac moc thoi gian 7 ngay, 30 ngay, 90 ngay va 1 nam.
+
+• Chia hoa don & tinh tien tip thong minh
+Chia tien an uong voi ban be de dang, tinh tien tip nhanh chong va quy doi truc tiep ve dong tien que huong cua ban.
+
+• Bo chuyen doi don vi da nang
+Chuyen doi chinh xac giua cac don vi do luong thong dung:
+- Khoi luong & Can nang (kg, lb, g, oz, st)
+- Do dai & Khoang cach (km, m, cm, mi, ft, in)
+- The tich & Dung tich (l, ml, gal, fl oz, cup)
+- Nhiet do (Celsius, Fahrenheit, Kelvin)
+- Van toc (km/h, mph, m/s, knots)
+
+• Cu chi lac may tien loi
+Lac nhe dien thoai de hoan doi nhanh giua dong tien goc va dong tien quy doi. Co the tuy chinh do nhay cam bien theo y thich.
+
+• Khoa sinh trac hoc bao mat
+Bao ve nhat ky tai chinh va cai dat rieng tu bang van tay, nhan dien khuon mat hoac ma PIN thiet bi.
+
+• 100% Khong Quang Cao & Ton Trong Quyen Rieng Tu
+Khong quang cao lam phien, khong theo doi nguoi dung, khong yeu cau dang ky tai khoan. Moi du lieu luu tru cuc bo tren may cua ban."
+"Korean","ko-KR","CoinBridge: 실시간 환율 계산기","오프라인 지원 실시간 환율 계산기, 단위 변환, 더치페이 및 생체 보안","CoinBridge는 광고 없이 오프라인에서 즉시 사용할 수 있는 스마트 환율 및 단위 계산기입니다. 해외여행, 직구, 일상 업무에 최적화되어 있습니다.
+
+주요 핵심 기능:
+
+• 실시간 환율 계산
+전 세계 150개 이상의 법정 화폐와 비트코인(BTC), 이더리움(ETH) 등 주요 가상자산 환율을 실시간으로 계산합니다. 환율 정보가 기기에 자동 저장되어 비행기 모드나 오프라인 환경에서도 자유롭게 계산할 수 있습니다.
+
+• 과거 환율 동향 차트
+7일, 30일, 90일, 1년 기간의 환율 변동 추이를 직관적인 차트로 확인하고 시세 흐름을 파악하세요.
+
+• 더치페이 및 팁 계산기
+식사 후 인원별 부담금과 팁을 정확히 나누고, 원화 등 자국 통화로 즉시 환산하여 정산할 수 있습니다.
+
+• 다기능 단위 변환기
+일상생활과 업무에 필요한 다양한 단위를 손쉽게 변환하세요:
+- 무게 및 질량 (kg, lb, g, oz, st)
+- 길이 및 거리 (km, m, cm, mi, ft, in)
+- 부피 및 용량 (l, ml, gal, fl oz, cup)
+- 온도 (섭씨, 화씨, 켈빈)
+- 속도 (km/h, mph, m/s, 노트)
+
+• 흔들기 제스처
+기기를 가볍게 흔들면 기준 통화와 환전 통화가 즉시 맞바뀝니다. 감도를 원하는 대로 조정할 수 있습니다.
+
+• 생체 인증 보안 잠금
+지문, 얼굴 인식 또는 기기 PIN 번호로 환전 내역과 즐겨찾기를 안전하게 보호합니다.
+
+• 100% 광고 없음 & 프라이버시 보호
+광고가 전혀 없으며 사용자 데이터를 수집하거나 외부로 전송하지 않습니다. 모든 계산 내역은 오직 사용자의 기기에만 안전하게 보관됩니다."
+"Arabic","ar","CoinBridge: تحويل العملات","محول عملات ووحدات دون اتصال مع مؤشرات حية وتقسيم الفواتير وأمان متقدم","تطبيق CoinBridge هو أداة متطورة وخالية تماماً من الإعلانات لتحويل العملات والوحدات الفيزيائية، وتعمل دون الحاجة إلى اتصال بالإنترنت.
+
+الميزات الرئيسية:
+
+• تحويل فوري لأسعار الصرف
+تحويل بين أكثر من 150 عملة عالمية بالإضافة إلى العملات الرقمية الرائدة مثل بيتكوين (BTC) وإيثيريوم (ETH). يتم حفظ الأسعار تلقائياً للاستخدام في وضع عدم الاتصال.
+
+• مؤشرات أسعار الصرف التاريخية
+رسوم بيانية تفاعلية لمتابعة تحركات أسعار العملات على مدى 7 أيام، 30 يوماً، 90 يوماً وسنة كاملة.
+
+• حاسبة ذكية لتقسيم الفاتورة والإكرامية
+حساب دقيق لتقسيم فواتير المطاعم وتحديد الإكرامية، مع تحويل مباشر إلى عملتك المحلية.
+
+• محول شامل لمختلف الوحدات
+تحويل دقيق ومريح لمختلف وحدات القياس:
+- الوزن والكتلة (كغ، رطل، غرام، أونصة، ستون)
+- الطول والمسافة (كم، متر، سم، ميل، قدم، بوصة)
+- الحجم والسعة (لتر، مل، جالون، أونصة سائلة، كوب)
+- درجة الحرارة (مئوية، فهرنهايت، كلفن)
+- السرعة (كم/ساعة، ميل/ساعة، م/ثانية، عقدة)
+
+• إيماءة هز الهاتف السريعة
+قم بهز هاتفك لتبديل العملة الأساسية مع العملة المحولة على الفور، مع إمكانية تعديل الحساسية.
+
+• قفل أمان بيومتري لحماية الخصوصية
+حماية سجلاتك المالية وأزواج العملات المفضلة باستخدام بصمة الإصبع أو بصمة الوجه أو رمز المرور.
+
+• 100% بدون إعلانات وبخصوصية كاملة
+لا يحتوي على إعلانات، لا يتتبع المستخدمين، ولا يتطلب أي تسجيل دخول. تبقى جميع سجلاتك على جهازك فقط."

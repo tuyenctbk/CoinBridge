@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">快速、离线且保护隐私的货币与单位换算</string>
+    <string name="splash_loading">正在加载最新汇率…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">汇率换算</string>
+    <string name="tab_unit">单位换算</string>
+    <string name="tab_bill_splitter">分账小费</string>
+    <string name="tab_rate_trends">走势图表</string>
+    <string name="tab_saved">收藏与安全</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">返回</string>
+    <string name="action_close">关闭</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_save">保存</string>
+    <string name="action_clear">清除</string>
+    <string name="action_clear_all">全部清除</string>
+    <string name="action_copy">复制</string>
+    <string name="action_copied">已复制到剪贴板</string>
+    <string name="action_search">搜索</string>
+    <string name="action_sync">同步</string>
+    <string name="action_settings">设置</string>
+    <string name="action_maybe_later">以后再说</string>
+    <string name="action_say_thanks">支持作者</string>
+    <string name="status_offline">离线</string>
+    <string name="status_online">在线</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">选择基准货币</string>
+    <string name="add_target_currency">添加目标货币</string>
+    <string name="search_currency_placeholder">搜索货币（例如 CNY, USD, BTC）</string>
+    <string name="base_currency_label">基准货币</string>
+    <string name="target_conversions_header">换算目标列表</string>
+    <string name="add_target_button">添加目标</string>
+    <string name="instant_conversion">即时换算</string>
+    <string name="last_synced">上次同步：%1$s</string>
+    <string name="calculations_completed">已完成 %1$d 次计算！</string>
+    <string name="milestone_satisfaction_msg">CoinBridge 承诺完全无广告、支持离线运行。如果在旅行或交易中对您有所帮助，您的自愿支持将助力独立开发持续推进！</string>
+    <string name="shake_detected_toast">检测到摇一摇：货币已快速互换！</string>
+    <string name="live_rate_trends_card">实时汇率走势</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">历史汇率走势分析</string>
+    <string name="historical_rate_label">%1$s ➔ %2$s 历史汇率</string>
+    <string name="fetching_rate_trends">正在获取走势数据…</string>
+    <string name="no_historical_data">暂无历史走势数据</string>
+    <string name="range_7d">7天</string>
+    <string name="range_30d">30天</string>
+    <string name="range_90d">90天</string>
+    <string name="range_1y">1年</string>
+    <string name="stat_low">最低：%1$s</string>
+    <string name="stat_avg">平均：%1$s</string>
+    <string name="stat_high">最高：%1$s</string>
+    <string name="stat_change">涨跌幅</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">智能账单与小费分摊</string>
+    <string name="original_bill_amount">账单原金额</string>
+    <string name="tip_percentage">小费比例</string>
+    <string name="split_count">分摊人数</string>
+    <string name="people_count">%1$d 人</string>
+    <string name="person_single">1 人</string>
+    <string name="per_person_label">每人应付</string>
+    <string name="total_bill_incl_tip">账单总计（含小费）：</string>
+    <string name="tip_amount_label">小费金额（%1$d%%）：</string>
+    <string name="conversion_rate_label">汇率折算：</string>
+    <string name="home_currency_label">本国货币</string>
+    <string name="foreign_currency_label">当地货币</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">多功能单位换算</string>
+    <string name="category_weight">重量与质量</string>
+    <string name="category_length">长度与距离</string>
+    <string name="category_volume">容积与体积</string>
+    <string name="category_temperature">温度换算</string>
+    <string name="category_speed">速度换算</string>
+    <string name="search_unit_placeholder">搜索单位名称或符号…</string>
+    <string name="all_category_equivalents">全部 %1$s 等值换算</string>
+    <string name="tap_to_target_unit">点击切换为目标</string>
+    <string name="recent_unit_conversions">最近换算记录</string>
+    <string name="no_recent_unit_conversions">暂无单位换算记录。</string>
+    <string name="log_unit_conversion">保存到历史</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">收藏与隐私安全</string>
+    <string name="tab_favorites">收藏</string>
+    <string name="tab_history">历史</string>
+    <string name="tab_settings">设置</string>
+    <string name="clear_history_dialog_title">清空所有换算记录？</string>
+    <string name="clear_history_dialog_msg">这将永久删除保存在本地设备上的所有货币和单位换算历史。</string>
+    <string name="no_favorite_currencies">暂无收藏的货币对。点击星标即可快速收藏。</string>
+    <string name="no_favorite_units">暂无收藏的单位对。点击星标即可快速收藏。</string>
+    <string name="no_currency_history">暂无货币换算历史记录。</string>
+    <string name="no_unit_history">暂无单位换算历史记录。</string>
+    <string name="privacy_tagline">100% 纯净无广告 • 零追踪 • 本地离线优先</string>
+    <string name="rate_app_btn">为应用评分</string>
+    <string name="share_app_btn">分享好友</string>
+    <string name="privacy_biometric_lock">隐私保护与生物识别锁</string>
+    <string name="secure_financial_logs">保护财务账目与设置隐私</string>
+    <string name="lock_app_now">立即锁定应用</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge 已锁定</string>
+    <string name="app_locked_subtitle">请验证生物识别以访问汇率与历史账目</string>
+    <string name="unlock_biometrics_btn">使用生物识别解锁</string>
+    <string name="use_passcode_btn">使用设备锁屏密码</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">摇一摇手势</string>
+    <string name="shake_gesture_subtitle">晃动手机即可快速对调基准货币</string>
+    <string name="shake_sensitivity_label">灵敏度：%1$s</string>
+    <string name="shake_tier_high">高灵敏</string>
+    <string name="shake_tier_high_desc">手腕轻轻一抖即可触发</string>
+    <string name="shake_tier_standard">标准</string>
+    <string name="shake_tier_standard_desc">适度手摇触发</string>
+    <string name="shake_tier_low">低灵敏</string>
+    <string name="shake_tier_low_desc">有力摇晃（防止口袋误触）</string>
+    <string name="shake_preset_gentle">轻柔 (1.8g)</string>
+    <string name="shake_preset_normal">标准 (2.5g)</string>
+    <string name="shake_preset_firm">稳固 (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">支持独立开发</string>
+    <string name="support_coinbridge_header">赞助 CoinBridge</string>
+    <string name="support_development_desc">100% 无广告、零跟踪、离线可用。您的支持让独立软件开发走得更远。</string>
+    <string name="active_supporter_badge">尊贵赞助者 (%1$s)</string>
+    <string name="supporter_thank_you">非常感谢您的支持！所有赞助提醒已为您永久关闭。</string>
+    <string name="google_play_purchase_title">Google Play 应用内购买</string>
+    <string name="native_play_billing">Google Play 官方原生结算</string>
+    <string name="paypal_support_title">PayPal 与二维码打赏</string>
+    <string name="scan_with_camera">使用相机或 PayPal 扫码</string>
+    <string name="open_paypal">打开 PayPal</string>
+    <string name="kofi_support_title">在 Ko-fi 上请作者喝杯咖啡</string>
+    <string name="kofi_support_desc">面向独立与开源开发者的直接赞助通道。</string>
+    <string name="open_kofi">打开 Ko-fi 页面</string>
+    <string name="copy_kofi_link">复制 Ko-fi 链接</string>
+    <string name="tier_coffee">请杯咖啡 ($1.99)</string>
+    <string name="tier_supporter">支持者档位 ($4.99)</string>
+    <string name="tier_pro">专业赞助人 ($9.99)</string>
+    <string name="tier_champion">冠军守护者 ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">觉得 %1$s 怎么样？</string>
+    <string name="rating_dialog_question">它是否帮助您顺利完成了换算与账目计算？</string>
+    <string name="rating_dialog_positive">非常好用！👍</string>
+    <string name="rating_dialog_feedback">提点建议 💬</string>
+    <string name="share_dialog_title">向朋友分享 %1$s？</string>
+    <string name="share_dialog_msg">%1$s 完全无广告、支持离线并严守隐私。如果您觉得好用，欢迎推荐给家人、同事或旅伴！</string>
+    <string name="share_dialog_confirm">立即分享 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">Android 12+ 桌面微件预览</string>
+    <string name="glance_widget_sync">同步桌面小组件</string>
+</resources>

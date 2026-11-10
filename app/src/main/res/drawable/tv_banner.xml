@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+
+    <!-- TV Banner Background Deep Slate Gradient -->
+    <path android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="320"
+                android:endY="180"
+                android:type="linear">
+                <item android:color="#0B132B" android:offset="0.0" />
+                <item android:color="#1C2541" android:offset="0.5" />
+                <item android:color="#0B132B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Subtle Tech Background Grid Lines -->
+    <path
+        android:pathData="M0,45 L320,45 M0,90 L320,90 M0,135 L320,135 M80,0 L80,180 M160,0 L160,180 M240,0 L240,180"
+        android:strokeWidth="0.75"
+        android:strokeColor="#122438"
+        android:fillColor="#00000000" />
+
+    <!-- Connecting Arch Bridge Glow -->
+    <path
+        android:pathData="M 68,116 C 98,62 222,62 252,116"
+        android:strokeWidth="6"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M 68,116 C 98,62 222,62 252,116"
+        android:strokeWidth="12"
+        android:strokeColor="#2010B981"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Left Coin ($ Fiat) Emerald -->
+    <path
+        android:pathData="M 82,104 A 20,20 0 1,0 82,104.01 Z"
+        android:fillColor="#10B981" />
+    <path
+        android:pathData="M 82,93 C 79,93 77,94.5 77,96.5 C 77,99 80,100 82,101 C 84,102 87,103 87,106 C 87,108.5 84,110 82,110 M 82,90 V 113"
+        android:strokeWidth="2.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Right Coin (₿ Crypto) Amber -->
+    <path
+        android:pathData="M 238,104 A 20,20 0 1,0 238,104.01 Z"
+        android:fillColor="#F59E0B" />
+    <path
+        android:pathData="M 232,95 H 240 C 242,95 244,96 244,98 C 244,100 242,101 240,102 C 243,103 245,105 245,107 C 245,109.5 242,111 239,111 H 232 M 235,92 V 114 M 239,92 V 114"
+        android:strokeWidth="2.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Center Bridge Fast Exchange Arrows -->
+    <path
+        android:pathData="M 128,74 H 192 M 184,66 L 192,74 L 184,82"
+        android:strokeWidth="3.5"
+        android:strokeColor="#818CF8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M 192,126 H 128 M 136,118 L 128,126 L 136,134"
+        android:strokeWidth="3.5"
+        android:strokeColor="#818CF8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+
+    <!-- CoinBridge Wordmark / Title Indicator Badge -->
+    <path
+        android:pathData="M 100,146 H 220 A 10,10 0 0,1 230,156 V 156 A 10,10 0 0,1 220,166 H 100 A 10,10 0 0,1 90,156 V 156 A 10,10 0 0,1 100,146 Z"
+        android:fillColor="#1E293B" />
+    <!-- Letter C -->
+    <path
+        android:pathData="M 115,152 H 108 V 160 H 115"
+        android:strokeWidth="2"
+        android:strokeColor="#10B981"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <!-- Letter B -->
+    <path
+        android:pathData="M 122,152 H 127 C 128.5,152 129.5,153 129.5,154.5 C 129.5,156 128.5,156.5 127,156.5 H 122 V 160 H 127 C 128.5,160 130,159 130,157.5 M 122,156 H 127"
+        android:strokeWidth="2"
+        android:strokeColor="#F59E0B"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+</vector>

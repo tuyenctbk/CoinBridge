@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">Conversor de divisas rápido, sin conexión y privado</string>
+    <string name="splash_loading">Cargando los tipos de cambio más recientes…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">Divisas</string>
+    <string name="tab_unit">Unidades</string>
+    <string name="tab_bill_splitter">Dividir cuenta</string>
+    <string name="tab_rate_trends">Tendencias</string>
+    <string name="tab_saved">Guardados y Seguridad</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">Atrás</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_clear">Borrar</string>
+    <string name="action_clear_all">Borrar todo</string>
+    <string name="action_copy">Copiar</string>
+    <string name="action_copied">Copiado al portapapeles</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_sync">Sincronizar</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="action_maybe_later">Quizás más tarde</string>
+    <string name="action_say_thanks">Dar las gracias</string>
+    <string name="status_offline">Sin conexión</string>
+    <string name="status_online">En línea</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">Seleccionar moneda base</string>
+    <string name="add_target_currency">Añadir moneda de destino</string>
+    <string name="search_currency_placeholder">Buscar moneda (ej. EUR, BTC, Yen)</string>
+    <string name="base_currency_label">Moneda base</string>
+    <string name="target_conversions_header">Conversiones de destino</string>
+    <string name="add_target_button">Añadir destino</string>
+    <string name="instant_conversion">Conversión instantánea</string>
+    <string name="last_synced">Última sincr.: %1$s</string>
+    <string name="calculations_completed">¡%1$d cálculos completados!</string>
+    <string name="milestone_satisfaction_msg">CoinBridge es 100% sin publicidad y funciona sin conexión. Si te ayuda en tus viajes o finanzas, tu apoyo voluntario mantiene el desarrollo independiente.</string>
+    <string name="shake_detected_toast">¡Agitación detectada: monedas intercambiadas!</string>
+    <string name="live_rate_trends_card">Tendencias de tipos de cambio</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">Historial de tendencias de cambio</string>
+    <string name="historical_rate_label">Tipo histórico %1$s ➔ %2$s</string>
+    <string name="fetching_rate_trends">Obteniendo tendencias de cambio…</string>
+    <string name="no_historical_data">No hay datos históricos disponibles</string>
+    <string name="range_7d">7D</string>
+    <string name="range_30d">30D</string>
+    <string name="range_90d">90D</string>
+    <string name="range_1y">1A</string>
+    <string name="stat_low">Mín.: %1$s</string>
+    <string name="stat_avg">Med.: %1$s</string>
+    <string name="stat_high">Máx.: %1$s</string>
+    <string name="stat_change">Cambio</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">Divisor de cuentas inteligente</string>
+    <string name="original_bill_amount">Monto original de la cuenta</string>
+    <string name="tip_percentage">Porcentaje de propina</string>
+    <string name="split_count">Dividir entre</string>
+    <string name="people_count">%1$d personas</string>
+    <string name="person_single">1 persona</string>
+    <string name="per_person_label">Por persona</string>
+    <string name="total_bill_incl_tip">Cuenta total (con propina):</string>
+    <string name="tip_amount_label">Monto de propina (%1$d%%):</string>
+    <string name="conversion_rate_label">Tipo de cambio:</string>
+    <string name="home_currency_label">Moneda local</string>
+    <string name="foreign_currency_label">Moneda extranjera</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">Conversor de unidades</string>
+    <string name="category_weight">Peso y Masa</string>
+    <string name="category_length">Longitud y Distancia</string>
+    <string name="category_volume">Volumen y Capacidad</string>
+    <string name="category_temperature">Temperatura</string>
+    <string name="category_speed">Velocidad</string>
+    <string name="search_unit_placeholder">Buscar unidad por nombre o símbolo…</string>
+    <string name="all_category_equivalents">Equivalencias en %1$s</string>
+    <string name="tap_to_target_unit">Toca para fijar destino</string>
+    <string name="recent_unit_conversions">Conversiones recientes de unidades</string>
+    <string name="no_recent_unit_conversions">Aún no hay conversiones de unidades registradas.</string>
+    <string name="log_unit_conversion">Guardar en historial</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">Guardados y Seguridad</string>
+    <string name="tab_favorites">Favoritos</string>
+    <string name="tab_history">Historial</string>
+    <string name="tab_settings">Ajustes</string>
+    <string name="clear_history_dialog_title">¿Borrar todo el historial?</string>
+    <string name="clear_history_dialog_msg">Esto eliminará permanentemente todos los registros de conversión de divisas y unidades de tu dispositivo.</string>
+    <string name="no_favorite_currencies">Aún no hay pares de divisas favoritos. Toca la estrella en cualquier par para guardarlo.</string>
+    <string name="no_favorite_units">Aún no hay pares de unidades favoritos. Toca la estrella en cualquier conversión para guardarla.</string>
+    <string name="no_currency_history">No hay conversiones de divisas registradas.</string>
+    <string name="no_unit_history">No hay conversiones de unidades registradas.</string>
+    <string name="privacy_tagline">100% Sin Publicidad • Cero Rastreadores • Sin Conexión</string>
+    <string name="rate_app_btn">Calificar app</string>
+    <string name="share_app_btn">Compartir</string>
+    <string name="privacy_biometric_lock">Privacidad y Bloqueo biométrico</string>
+    <string name="secure_financial_logs">Protege registros financieros y ajustes</string>
+    <string name="lock_app_now">Bloquear app ahora</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge bloqueado</string>
+    <string name="app_locked_subtitle">Desbloquea CoinBridge para acceder a tasas de cambio y registros</string>
+    <string name="unlock_biometrics_btn">Desbloquear con biometría</string>
+    <string name="use_passcode_btn">Usar código PIN</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">Gesto de agitación</string>
+    <string name="shake_gesture_subtitle">Agita el dispositivo para intercambiar divisas</string>
+    <string name="shake_sensitivity_label">Sensibilidad: %1$s</string>
+    <string name="shake_tier_high">Alta</string>
+    <string name="shake_tier_high_desc">Se activa con un movimiento leve de muñeca</string>
+    <string name="shake_tier_standard">Estándar</string>
+    <string name="shake_tier_standard_desc">Agitación firme con la mano</string>
+    <string name="shake_tier_low">Baja</string>
+    <string name="shake_tier_low_desc">Agitación enérgica (evita falsos toques en el bolsillo)</string>
+    <string name="shake_preset_gentle">Suave (1.8g)</string>
+    <string name="shake_preset_normal">Normal (2.5g)</string>
+    <string name="shake_preset_firm">Firme (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">Apoyar el desarrollo</string>
+    <string name="support_coinbridge_header">Apoyar CoinBridge</string>
+    <string name="support_development_desc">100% sin publicidad, privado y sin conexión. El desarrollo independiente es posible gracias a ti.</string>
+    <string name="active_supporter_badge">Colaborador activo (%1$s)</string>
+    <string name="supporter_thank_you">¡Muchas gracias! Los avisos de donación han sido desactivados.</string>
+    <string name="google_play_purchase_title">Compra integrada en Google Play</string>
+    <string name="native_play_billing">Facturación oficial de Google Play</string>
+    <string name="paypal_support_title">PayPal y código QR</string>
+    <string name="scan_with_camera">Escanear con la cámara o PayPal</string>
+    <string name="open_paypal">Abrir PayPal</string>
+    <string name="kofi_support_title">Invítame a un café en Ko-fi</string>
+    <string name="kofi_support_desc">Bote de propinas para desarrolladores independientes y de código abierto.</string>
+    <string name="open_kofi">Abrir página de Ko-fi</string>
+    <string name="copy_kofi_link">Copiar enlace de Ko-fi</string>
+    <string name="tier_coffee">Nivel Café ($1.99)</string>
+    <string name="tier_supporter">Nivel Colaborador ($4.99)</string>
+    <string name="tier_pro">Patrocinador Pro ($9.99)</string>
+    <string name="tier_champion">Patrocinador Campeón ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">¿Te gusta %1$s?</string>
+    <string name="rating_dialog_question">¿Te resulta útil la aplicación para tus conversiones y cálculos?</string>
+    <string name="rating_dialog_positive">¡Sí, me encanta! 👍</string>
+    <string name="rating_dialog_feedback">Debe mejorar 💬</string>
+    <string name="share_dialog_title">¿Compartir %1$s con amigos?</string>
+    <string name="share_dialog_msg">%1$s es 100% sin publicidad, funciona sin conexión y respeta tu privacidad. ¡Si te gusta, compártelo con familiares, colegas o viajeros!</string>
+    <string name="share_dialog_confirm">Compartir ahora 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">Widget rápido Android 12+</string>
+    <string name="glance_widget_sync">Sincronizar Widget</string>
+</resources>

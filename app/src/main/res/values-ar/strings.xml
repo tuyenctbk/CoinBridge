@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">محول عملات ووحدات سريع، دون اتصال وآمن</string>
+    <string name="splash_loading">جارٍ تحميل أحدث أسعار الصرف…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">العملات</string>
+    <string name="tab_unit">الوحدات</string>
+    <string name="tab_bill_splitter">تقسيم الفاتورة</string>
+    <string name="tab_rate_trends">المؤشرات</string>
+    <string name="tab_saved">المحفوظات والأمان</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">رجوع</string>
+    <string name="action_close">إغلاق</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_save">حفظ</string>
+    <string name="action_clear">مسح</string>
+    <string name="action_clear_all">مسح الكل</string>
+    <string name="action_copy">نسخ</string>
+    <string name="action_copied">تم النسخ إلى الحافظة</string>
+    <string name="action_search">بحث</string>
+    <string name="action_sync">مزامنة</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="action_maybe_later">ربما لاحقاً</string>
+    <string name="action_say_thanks">دعم التطوير</string>
+    <string name="status_offline">غير متصل</string>
+    <string name="status_online">متصل</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">اختر العملة الأساسية</string>
+    <string name="add_target_currency">إضافة عملة التحويل</string>
+    <string name="search_currency_placeholder">ابحث عن عملة (مثل USD، EUR، SAR، BTC)</string>
+    <string name="base_currency_label">العملة الأساسية</string>
+    <string name="target_conversions_header">عملات التحويل</string>
+    <string name="add_target_button">إضافة عملة</string>
+    <string name="instant_conversion">تحويل فوري</string>
+    <string name="last_synced">آخر مزامنة: %1$s</string>
+    <string name="calculations_completed">تم إكمال %1$d عملية حسابية!</string>
+    <string name="milestone_satisfaction_msg">تطبيق CoinBridge خالٍ تماماً من الإعلانات ويعمل دون اتصال. إذا كان يساعدك في رحلاتك وحساباتك، فإن دعمك المستقل يضمن استمرارية التطوير!</string>
+    <string name="shake_detected_toast">تم الكشف عن الهز: تم تبديل العملات!</string>
+    <string name="live_rate_trends_card">مؤشرات أسعار الصرف الحية</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">سجل اتجاهات أسعار الصرف</string>
+    <string name="historical_rate_label">السعر التاريخي %1$s ➔ %2$s</string>
+    <string name="fetching_rate_trends">جارٍ جلب بيانات الأسعار…</string>
+    <string name="no_historical_data">لا تتوفر بيانات تاريخية</string>
+    <string name="range_7d">7 أيام</string>
+    <string name="range_30d">30 يوماً</string>
+    <string name="range_90d">90 يوماً</string>
+    <string name="range_1y">سنة</string>
+    <string name="stat_low">أدنى: %1$s</string>
+    <string name="stat_avg">متوسط: %1$s</string>
+    <string name="stat_high">أعلى: %1$s</string>
+    <string name="stat_change">التغير</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">تقسيم الفاتورة وحساب الإكرامية</string>
+    <string name="original_bill_amount">مبلغ الفاتورة الأصلي</string>
+    <string name="tip_percentage">نسبة الإكرامية (%)</string>
+    <string name="split_count">التقسيم بين</string>
+    <string name="people_count">%1$d أشخاص</string>
+    <string name="person_single">شخص واحد</string>
+    <string name="per_person_label">لكل شخص</string>
+    <string name="total_bill_incl_tip">الإجمالي (شامل الإكرامية):</string>
+    <string name="tip_amount_label">مبلغ الإكرامية (%1$d%%):</string>
+    <string name="conversion_rate_label">سعر التحويل:</string>
+    <string name="home_currency_label">العملة المحلية</string>
+    <string name="foreign_currency_label">العملة الأجنبية</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">محول الوحدات</string>
+    <string name="category_weight">الوزن والكتلة</string>
+    <string name="category_length">الطول والمسافة</string>
+    <string name="category_volume">الحجم والسعة</string>
+    <string name="category_temperature">درجة الحرارة</string>
+    <string name="category_speed">السرعة</string>
+    <string name="search_unit_placeholder">ابحث عن وحدة بالاسم أو الرمز…</string>
+    <string name="all_category_equivalents">جميع مكافئات %1$s</string>
+    <string name="tap_to_target_unit">المس لتعيين كوحدة مستهدفة</string>
+    <string name="recent_unit_conversions">التحويلات الأخيرة</string>
+    <string name="no_recent_unit_conversions">لا توجد تحويلات سابقة مسجلة.</string>
+    <string name="log_unit_conversion">حفظ في السجل</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">المحفوظات والأمان</string>
+    <string name="tab_favorites">المفضلة</string>
+    <string name="tab_history">السجل</string>
+    <string name="tab_settings">الإعدادات</string>
+    <string name="clear_history_dialog_title">مسح كل سجل التحويلات؟</string>
+    <string name="clear_history_dialog_msg">سيؤدي هذا إلى حذف جميع سجلات تحويل العملات والوحدات المحفوظة على جهازك نهائياً.</string>
+    <string name="no_favorite_currencies">لا توجد أزواج عملات مفضلة. اضغط على النجمة لحفظ زوج عملات.</string>
+    <string name="no_favorite_units">لا توجد وحدات مفضلة. اضغط على النجمة لحفظ تحويل.</string>
+    <string name="no_currency_history">لا توجد تحويلات عملات مسجلة.</string>
+    <string name="no_unit_history">لا توجد تحويلات وحدات مسجلة.</string>
+    <string name="privacy_tagline">100% خالٍ من الإعلانات • بدون تتبع • دون اتصال أولاً</string>
+    <string name="rate_app_btn">تقييم التطبيق</string>
+    <string name="share_app_btn">مشاركة</string>
+    <string name="privacy_biometric_lock">الخصوصية والقفل البيومتري</string>
+    <string name="secure_financial_logs">حماية السجلات المالية والإعدادات</string>
+    <string name="lock_app_now">قفل التطبيق الآن</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge مقفل</string>
+    <string name="app_locked_subtitle">يرجى تأكيد الهوية للوصول إلى أسعار الصرف والسجلات</string>
+    <string name="unlock_biometrics_btn">فتح القفل بالبصمة / الوجه</string>
+    <string name="use_passcode_btn">استخدام رمز مرور الجهاز</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">إيماءة هز الجهاز</string>
+    <string name="shake_gesture_subtitle">هز الهاتف لتبديل العملة الأساسية بسرعة</string>
+    <string name="shake_sensitivity_label">الحساسية: %1$s</string>
+    <string name="shake_tier_high">عالية</string>
+    <string name="shake_tier_high_desc">تستجيب لحركة خفيفة من المعصم</string>
+    <string name="shake_tier_standard">قياسية</string>
+    <string name="shake_tier_standard_desc">هز يدوي معتدل</string>
+    <string name="shake_tier_low">منخفضة</string>
+    <string name="shake_tier_low_desc">هز قوي (يمنع التفعيل الخاطئ في الجيب)</string>
+    <string name="shake_preset_gentle">خفيف (1.8g)</string>
+    <string name="shake_preset_normal">معتدل (2.5g)</string>
+    <string name="shake_preset_firm">قوي (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">دعم تطوير التطبيق</string>
+    <string name="support_coinbridge_header">دعم CoinBridge</string>
+    <string name="support_development_desc">100% خالٍ من الإعلانات، آمن ومتاح دون اتصال. دعمكم يجعل التطوير المستقل ممكناً.</string>
+    <string name="active_supporter_badge">داعم نشط (%1$s)</string>
+    <string name="supporter_thank_you">شكراً جزيلاً لك! تم إيقاف جميع إشعارات الدعم نهائياً.</string>
+    <string name="google_play_purchase_title">الشراء عبر Google Play</string>
+    <string name="native_play_billing">نظام الفوترة الرسمي من Google Play</string>
+    <string name="paypal_support_title">PayPal ورمز الاستجابة السريعة (QR)</string>
+    <string name="scan_with_camera">امسح بالكاميرا أو تطبيق PayPal</string>
+    <string name="open_paypal">فتح PayPal</string>
+    <string name="kofi_support_title">ادعمني بفنجان قهوة على Ko-fi</string>
+    <string name="kofi_support_desc">دعم مباشر للمطورين المستقلين ومفتوحي المصدر.</string>
+    <string name="open_kofi">فتح صفحة Ko-fi</string>
+    <string name="copy_kofi_link">نسخ رابط Ko-fi</string>
+    <string name="tier_coffee">فنجان قهوة ($1.99)</string>
+    <string name="tier_supporter">مستوى الداعم ($4.99)</string>
+    <string name="tier_pro">راعٍ محترف ($9.99)</string>
+    <string name="tier_champion">الراعي البطل ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">هل يعجبك %1$s؟</string>
+    <string name="rating_dialog_question">هل تجد التطبيق مفيداً لتحويلاتك وحساباتك اليومية؟</string>
+    <string name="rating_dialog_positive">نعم، رائع جداً! 👍</string>
+    <string name="rating_dialog_feedback">يحتاج تحسينات 💬</string>
+    <string name="share_dialog_title">مشاركة %1$s مع الأصدقاء؟</string>
+    <string name="share_dialog_msg">%1$s خالٍ من الإعلانات، يعمل دون إنترنت ويحترم خصوصيتك بالكامل. شاركه مع عائلتك وزملائك!</string>
+    <string name="share_dialog_confirm">مشاركة الآن 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">أداة الشاشة الرئيسية السريعة Android 12+</string>
+    <string name="glance_widget_sync">مزامنة الأداة</string>
+</resources>

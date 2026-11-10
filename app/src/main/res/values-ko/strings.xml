@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">빠르고 안전한 오프라인 환율 및 단위 계산기</string>
+    <string name="splash_loading">최신 환율 정보를 불러오는 중…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">환율 계산</string>
+    <string name="tab_unit">단위 변환</string>
+    <string name="tab_bill_splitter">더치페이</string>
+    <string name="tab_rate_trends">환율 동향</string>
+    <string name="tab_saved">저장 및 보안</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">뒤로</string>
+    <string name="action_close">닫기</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_save">저장</string>
+    <string name="action_clear">지우기</string>
+    <string name="action_clear_all">모두 삭제</string>
+    <string name="action_copy">복사</string>
+    <string name="action_copied">클립보드에 복사되었습니다</string>
+    <string name="action_search">검색</string>
+    <string name="action_sync">동기화</string>
+    <string name="action_settings">설정</string>
+    <string name="action_maybe_later">나중에</string>
+    <string name="action_say_thanks">개발자 응원하기</string>
+    <string name="status_offline">오프라인</string>
+    <string name="status_online">온라인</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">기준 통화 선택</string>
+    <string name="add_target_currency">환전 대상 통화 추가</string>
+    <string name="search_currency_placeholder">통화 검색 (예: KRW, USD, BTC, JPY)</string>
+    <string name="base_currency_label">기준 통화</string>
+    <string name="target_conversions_header">환전 대상 목록</string>
+    <string name="add_target_button">통화 추가</string>
+    <string name="instant_conversion">실시간 환산</string>
+    <string name="last_synced">최근 동기화: %1$s</string>
+    <string name="calculations_completed">%1$d회의 계산이 완료되었습니다!</string>
+    <string name="milestone_satisfaction_msg">CoinBridge는 100% 광고가 없으며 오프라인에서 작동합니다. 여행이나 업무에 도움이 되셨다면 자발적인 후원으로 독립 개발을 응원해 주세요!</string>
+    <string name="shake_detected_toast">흔들기 감지: 통화가 변경되었습니다!</string>
+    <string name="live_rate_trends_card">실시간 환율 추이</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">과거 환율 추이 분석</string>
+    <string name="historical_rate_label">%1$s ➔ %2$s 과거 환율</string>
+    <string name="fetching_rate_trends">환율 동향을 가져오는 중…</string>
+    <string name="no_historical_data">표시할 과거 데이터가 없습니다</string>
+    <string name="range_7d">7일</string>
+    <string name="range_30d">30일</string>
+    <string name="range_90d">90일</string>
+    <string name="range_1y">1년</string>
+    <string name="stat_low">최저: %1$s</string>
+    <string name="stat_avg">평균: %1$s</string>
+    <string name="stat_high">최고: %1$s</string>
+    <string name="stat_change">변동률</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">스마트 정산 및 팁 계산기</string>
+    <string name="original_bill_amount">청구 금액</string>
+    <string name="tip_percentage">팁 비율 (%)</string>
+    <string name="split_count">인원 수</string>
+    <string name="people_count">%1$d명</string>
+    <string name="person_single">1명</string>
+    <string name="per_person_label">1인당 부담금</string>
+    <string name="total_bill_incl_tip">총 결제액 (팁 포함):</string>
+    <string name="tip_amount_label">팁 금액 (%1$d%%):</string>
+    <string name="conversion_rate_label">적용 환율:</string>
+    <string name="home_currency_label">자국 통화</string>
+    <string name="foreign_currency_label">현지 통화</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">단위 변환기</string>
+    <string name="category_weight">무게 및 질량</string>
+    <string name="category_length">길이 및 거리</string>
+    <string name="category_volume">부피 및 용량</string>
+    <string name="category_temperature">온도</string>
+    <string name="category_speed">속도</string>
+    <string name="search_unit_placeholder">단위 이름이나 기호 검색…</string>
+    <string name="all_category_equivalents">%1$s 환산 표</string>
+    <string name="tap_to_target_unit">탭하여 대상으로 지정</string>
+    <string name="recent_unit_conversions">최근 단위 변환 기록</string>
+    <string name="no_recent_unit_conversions">최근 변환 기록이 없습니다.</string>
+    <string name="log_unit_conversion">기록에 저장</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">저장 및 보안</string>
+    <string name="tab_favorites">즐겨찾기</string>
+    <string name="tab_history">기록</string>
+    <string name="tab_settings">설정</string>
+    <string name="clear_history_dialog_title">모든 변환 기록을 삭제하시겠습니까?</string>
+    <string name="clear_history_dialog_msg">기기에 저장된 모든 통화 및 단위 변환 기록이 영구적으로 제거됩니다.</string>
+    <string name="no_favorite_currencies">즐겨찾는 통화 쌍이 없습니다. 별표 아이콘을 탭하여 추가하세요.</string>
+    <string name="no_favorite_units">즐겨찾는 단위 쌍이 없습니다. 별표 아이콘을 탭하여 추가하세요.</string>
+    <string name="no_currency_history">저장된 통화 변환 기록이 없습니다.</string>
+    <string name="no_unit_history">저장된 단위 변환 기록이 없습니다.</string>
+    <string name="privacy_tagline">100% 광고 없음 • 추적기 없음 • 오프라인 우선</string>
+    <string name="rate_app_btn">앱 평가하기</string>
+    <string name="share_app_btn">공유하기</string>
+    <string name="privacy_biometric_lock">개인정보 보호 및 생체 인식 잠금</string>
+    <string name="secure_financial_logs">금융 기록 및 설정 보호</string>
+    <string name="lock_app_now">지금 앱 잠그기</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge 잠김</string>
+    <string name="app_locked_subtitle">환율 정보와 금융 기록을 보려면 인증하세요</string>
+    <string name="unlock_biometrics_btn">생체 인식으로 잠금 해제</string>
+    <string name="use_passcode_btn">기기 비밀번호 / PIN 사용</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">흔들기 제스처</string>
+    <string name="shake_gesture_subtitle">기기를 흔들어 기준 통화 빠르게 맞바꾸기</string>
+    <string name="shake_sensitivity_label">민감도: %1$s</string>
+    <string name="shake_tier_high">높음</string>
+    <string name="shake_tier_high_desc">가벼운 손목 스냅으로 작동</string>
+    <string name="shake_tier_standard">표준</string>
+    <string name="shake_tier_standard_desc">적당한 손 흔들기</string>
+    <string name="shake_tier_low">낮음</string>
+    <string name="shake_tier_low_desc">강한 흔들기 (주머니 오작동 방지)</string>
+    <string name="shake_preset_gentle">부드럽게 (1.8g)</string>
+    <string name="shake_preset_normal">표준 (2.5g)</string>
+    <string name="shake_preset_firm">강하게 (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">개발 후원하기</string>
+    <string name="support_coinbridge_header">CoinBridge 후원</string>
+    <string name="support_development_desc">100% 무광고, 개인정보 보호 및 오프라인 작동. 여러분의 후원으로 독립 개발이 지속됩니다.</string>
+    <string name="active_supporter_badge">활동 후원자 (%1$s)</string>
+    <string name="supporter_thank_you">진심으로 감사드립니다! 모든 후원 알림이 비활성화되었습니다.</string>
+    <string name="google_play_purchase_title">Google Play 인앱 구매</string>
+    <string name="native_play_billing">Google Play 공식 결제</string>
+    <string name="paypal_support_title">PayPal 및 QR 코드</string>
+    <string name="scan_with_camera">카메라 또는 PayPal 앱으로 스캔</string>
+    <string name="open_paypal">PayPal 열기</string>
+    <string name="kofi_support_title">Ko-fi로 커피 한 잔 선물하기</string>
+    <string name="kofi_support_desc">인디 및 오픈소스 개발자를 위한 직접 후원 창구.</string>
+    <string name="open_kofi">Ko-fi 페이지 열기</string>
+    <string name="copy_kofi_link">Ko-fi 링크 복사</string>
+    <string name="tier_coffee">커피 한 잔 ($1.99)</string>
+    <string name="tier_supporter">서포터 등급 ($4.99)</string>
+    <string name="tier_pro">프로 스폰서 ($9.99)</string>
+    <string name="tier_champion">챔피언 스폰서 ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">%1$s 앱이 마음에 드시나요?</string>
+    <string name="rating_dialog_question">환율 계산과 일상 업무에 도움이 되고 있나요?</string>
+    <string name="rating_dialog_positive">네, 아주 좋아요! 👍</string>
+    <string name="rating_dialog_feedback">개선이 필요해요 💬</string>
+    <string name="share_dialog_title">친구에게 %1$s 공유하기</string>
+    <string name="share_dialog_msg">%1$s는 광고가 없고 오프라인에서도 작동하며 개인정보를 철저히 보호합니다. 친구나 동료에게 추천해 보세요!</string>
+    <string name="share_dialog_confirm">지금 공유하기 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">Android 12+ 퀵 위젯</string>
+    <string name="glance_widget_sync">위젯 동기화</string>
+</resources>

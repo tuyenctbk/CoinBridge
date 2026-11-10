@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CoinBridge</title>
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #34d399;
+                --primary-dark: #10b981;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --bg-page: #0f172a;
+                --bg-card: #1e293b;
+                --border-color: #334155;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            margin: 0;
+            padding: 32px 16px;
+        }
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .effective-date {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+        h2 {
+            font-size: 1.35rem;
+            color: var(--primary-dark);
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        p, li {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        ul {
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .contact-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">Privacy-First Architecture</span>
+        <h1>Privacy Policy for CoinBridge</h1>
+        <div class="effective-date">Last Updated &amp; Effective Date: November 9, 2026</div>
+
+        <p>Welcome to <strong>CoinBridge</strong>. Your privacy is paramount to us. This Privacy Policy explains our practices regarding data collection, usage, and protection when you use the CoinBridge mobile application.</p>
+
+        <h2>1. Zero Personal Data Collection (100% Ad-Free &amp; Tracker-Free)</h2>
+        <p>CoinBridge does <strong>NOT</strong> collect, harvest, store, or transmit any personally identifiable information (PII). We do not require account creation, registration, email sign-ins, phone numbers, or social media logins to use the application.</p>
+        <ul>
+            <li>No user profiling or cross-site tracking.</li>
+            <li>No third-party advertising SDKs or programmatic ad networks.</li>
+            <li>No analytics trackers that log personal device identifiers (such as IMEI or Android Advertising ID).</li>
+        </ul>
+
+        <h2>2. Local On-Device Data Storage (Room Database &amp; SharedPreferences)</h2>
+        <p>All data generated through your use of CoinBridge is stored <strong>strictly on your local device</strong> using secure Android Room SQLite storage and SharedPreferences:</p>
+        <ul>
+            <li><strong>Favorites &amp; History:</strong> Custom currency pairs, unit conversions, and calculation logs remain stored solely in local app sandbox storage.</li>
+            <li><strong>Preferences:</strong> User preferences (e.g., base currency, target currencies, shake gesture sensitivity) are stored locally in private SharedPreferences.</li>
+            <li><strong>Data Deletion:</strong> You can clear your entire history and stored preferences at any time directly from the app's "Saved &amp; Security" tab or by clearing app storage in Android System Settings.</li>
+        </ul>
+
+        <h2>3. Sensor &amp; Hardware Usage (Shake Gesture)</h2>
+        <p>CoinBridge utilizes your device's built-in <strong>accelerometer sensor</strong> to offer an optional "Shake to Swap" feature, allowing you to quickly invert currency or unit pairs. Sensor readings are processed exclusively in real-time on your device's local memory to detect acceleration thresholds and are never logged, stored, or transmitted over any network.</p>
+
+        <h2>4. Biometric Security (Android BiometricPrompt)</h2>
+        <p>CoinBridge includes an optional biometric app lock to secure your financial calculation logs. When enabled, authentication is handled directly by the secure Android OS subsystem (via <code>androidx.biometric.BiometricPrompt</code>). CoinBridge <strong>never</strong> accesses, reads, or stores your fingerprint, facial recognition, or PIN/passcode data.</p>
+
+        <h2>5. Network Communications &amp; Public Rate Feeds</h2>
+        <p>To provide accurate conversion rates, CoinBridge connects to public, reputable exchange rate APIs (such as the open Frankfurter API and Coinbase API). These network requests:</p>
+        <ul>
+            <li>Transmit only standard HTTP GET queries specifying standard currency codes (e.g., USD, EUR, BTC).</li>
+            <li>Do not transmit personal identity tokens or user data.</li>
+            <li>Cache rates locally so that full functionality remains available even when your device is completely offline or in airplane mode.</li>
+        </ul>
+
+        <h2>6. Voluntary Support &amp; Donations (Google Play Billing)</h2>
+        <p>CoinBridge offers voluntary in-app supporter tiers. Transactions are processed securely through the official <strong>Google Play In-App Billing</strong> system. We do not process, receive, or store your credit card, debit card, or payment credentials.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>CoinBridge does not knowingly collect or solicit personal information from children under the age of 13. Because our app does not collect personal information from any user, it is compliant with the Children's Online Privacy Protection Act (COPPA) and international child privacy standards.</p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>We may periodically update this Privacy Policy to reflect app updates or regulatory obligations. Any revisions will be reflected with an updated "Last Updated" date at the top of this document.</p>
+
+        <h2>9. Developer Contact</h2>
+        <p>If you have any questions or feedback regarding this Privacy Policy or the security of CoinBridge, please contact us directly:</p>
+        <div class="contact-box">
+            <strong>Developer:</strong> CoinBridge Indie Development<br>
+            <strong>Support Email:</strong> <a href="mailto:tuyenctbk@gmail.com">tuyenctbk@gmail.com</a><br>
+            <strong>Application:</strong> CoinBridge (Android)
+        </div>
+    </div>
+</body>
+</html>

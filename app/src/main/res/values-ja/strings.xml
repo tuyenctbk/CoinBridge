@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">高速・オフライン・プライバシー保護の為替換算</string>
+    <string name="splash_loading">最新レートを読み込み中…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">通貨</string>
+    <string name="tab_unit">単位換算</string>
+    <string name="tab_bill_splitter">割り勘</string>
+    <string name="tab_rate_trends">推移</string>
+    <string name="tab_saved">保存と設定</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">戻る</string>
+    <string name="action_close">閉じる</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_save">保存</string>
+    <string name="action_clear">消去</string>
+    <string name="action_clear_all">すべて消去</string>
+    <string name="action_copy">コピー</string>
+    <string name="action_copied">クリップボードにコピーしました</string>
+    <string name="action_search">検索</string>
+    <string name="action_sync">同期</string>
+    <string name="action_settings">設定</string>
+    <string name="action_maybe_later">後で</string>
+    <string name="action_say_thanks">支援する</string>
+    <string name="status_offline">オフライン</string>
+    <string name="status_online">オンライン</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">基準通貨を選択</string>
+    <string name="add_target_currency">換算先通貨を追加</string>
+    <string name="search_currency_placeholder">通貨を検索 (例: JPY, USD, BTC)</string>
+    <string name="base_currency_label">基準通貨</string>
+    <string name="target_conversions_header">換算結果</string>
+    <string name="add_target_button">通貨を追加</string>
+    <string name="instant_conversion">即時換算</string>
+    <string name="last_synced">最終同期: %1$s</string>
+    <string name="calculations_completed">%1$d回の計算が完了しました！</string>
+    <string name="milestone_satisfaction_msg">CoinBridgeは完全広告なし・オフライン対応です。海外旅行や取引にお役立ちいただけましたら、個人開発への応援をお願いいたします！</string>
+    <string name="shake_detected_toast">シェイク検知：通貨を入れ替えました！</string>
+    <string name="live_rate_trends_card">為替レート推移</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">過去の為替レート推移</string>
+    <string name="historical_rate_label">%1$s ➔ %2$s レート推移</string>
+    <string name="fetching_rate_trends">推移データを取得中…</string>
+    <string name="no_historical_data">履歴データがありません</string>
+    <string name="range_7d">7日</string>
+    <string name="range_30d">30日</string>
+    <string name="range_90d">90日</string>
+    <string name="range_1y">1年</string>
+    <string name="stat_low">最安値: %1$s</string>
+    <string name="stat_avg">平均値: %1$s</string>
+    <string name="stat_high">最高値: %1$s</string>
+    <string name="stat_change">変動</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">割り勘・チップ計算</string>
+    <string name="original_bill_amount">請求総額</string>
+    <string name="tip_percentage">チップ率 (%)</string>
+    <string name="split_count">分割人数</string>
+    <string name="people_count">%1$d人</string>
+    <string name="person_single">1人</string>
+    <string name="per_person_label">1人あたり</string>
+    <string name="total_bill_incl_tip">合計支払額 (チップ込):</string>
+    <string name="tip_amount_label">チップ金額 (%1$d%%):</string>
+    <string name="conversion_rate_label">適用換算レート:</string>
+    <string name="home_currency_label">自国通貨</string>
+    <string name="foreign_currency_label">現地通貨</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">単位換算ツール</string>
+    <string name="category_weight">重さ・質量</string>
+    <string name="category_length">長さ・距離</string>
+    <string name="category_volume">体積・容量</string>
+    <string name="category_temperature">温度</string>
+    <string name="category_speed">速度</string>
+    <string name="search_unit_placeholder">単位名や記号を検索…</string>
+    <string name="all_category_equivalents">%1$s の各単位換算一覧</string>
+    <string name="tap_to_target_unit">タップして対象に設定</string>
+    <string name="recent_unit_conversions">最近の換算履歴</string>
+    <string name="no_recent_unit_conversions">換算履歴はまだありません。</string>
+    <string name="log_unit_conversion">履歴に保存</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">保存とお気に入り</string>
+    <string name="tab_favorites">お気に入り</string>
+    <string name="tab_history">履歴</string>
+    <string name="tab_settings">設定</string>
+    <string name="clear_history_dialog_title">履歴をすべて消去しますか？</string>
+    <string name="clear_history_dialog_msg">端末に保存されているすべての通貨・単位換算履歴が完全に削除されます。</string>
+    <string name="no_favorite_currencies">保存された通貨ペアがありません。星アイコンをタップして追加できます。</string>
+    <string name="no_favorite_units">保存された単位ペアがありません。星アイコンをタップして追加できます。</string>
+    <string name="no_currency_history">通貨換算履歴がありません。</string>
+    <string name="no_unit_history">単位換算履歴がありません。</string>
+    <string name="privacy_tagline">広告ゼロ • トラッカーなし • 完全オフライン</string>
+    <string name="rate_app_btn">アプリを評価</string>
+    <string name="share_app_btn">シェア</string>
+    <string name="privacy_biometric_lock">生体認証ロック</string>
+    <string name="secure_financial_logs">履歴や設定を生体認証で保護</string>
+    <string name="lock_app_now">今すぐロック</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge はロックされています</string>
+    <string name="app_locked_subtitle">為替レートと履歴を表示するには認証してください</string>
+    <string name="unlock_biometrics_btn">生体認証でロック解除</string>
+    <string name="use_passcode_btn">端末のパスコードを使用</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">シェイクジェスチャー</string>
+    <string name="shake_gesture_subtitle">端末を振って通貨をすばやく入れ替え</string>
+    <string name="shake_sensitivity_label">感度: %1$s</string>
+    <string name="shake_tier_high">高感度</string>
+    <string name="shake_tier_high_desc">手首の軽いスナップで反応</string>
+    <string name="shake_tier_standard">標準</string>
+    <string name="shake_tier_standard_desc">適度な手のシェイク</string>
+    <string name="shake_tier_low">低感度</string>
+    <string name="shake_tier_low_desc">強めのシェイク (ポケット内の誤動作防止)</string>
+    <string name="shake_preset_gentle">弱め (1.8g)</string>
+    <string name="shake_preset_normal">普通 (2.5g)</string>
+    <string name="shake_preset_firm">強め (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">開発を応援する</string>
+    <string name="support_coinbridge_header">CoinBridgeの支援</string>
+    <string name="support_development_desc">100%広告なし・プライバシー重視。個人開発の継続をサポートしていただけると幸いです。</string>
+    <string name="active_supporter_badge">サポーター会員 (%1$s)</string>
+    <string name="supporter_thank_you">ご支援ありがとうございます！すべての支援案内が非表示になりました。</string>
+    <string name="google_play_purchase_title">Google Play アプリ内購入</string>
+    <string name="native_play_billing">Google Play 公式決済</string>
+    <string name="paypal_support_title">PayPal &amp; QRコード</string>
+    <string name="scan_with_camera">カメラまたはPayPalアプリでスキャン</string>
+    <string name="open_paypal">PayPalを開く</string>
+    <string name="kofi_support_title">Ko-fiでコーヒーをご馳走</string>
+    <string name="kofi_support_desc">インディー開発者向けの直接支援プラットフォーム。</string>
+    <string name="open_kofi">Ko-fiページを開く</string>
+    <string name="copy_kofi_link">Ko-fiリンクをコピー</string>
+    <string name="tier_coffee">コーヒー支援 ($1.99)</string>
+    <string name="tier_supporter">サポーター支援 ($4.99)</string>
+    <string name="tier_pro">プロスポンサー ($9.99)</string>
+    <string name="tier_champion">チャンピオンスポンサー ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">%1$s を気に入っていただけましたか？</string>
+    <string name="rating_dialog_question">換算や計算にお役立ちできていますでしょうか？</string>
+    <string name="rating_dialog_positive">とても便利！ 👍</string>
+    <string name="rating_dialog_feedback">改善の余地あり 💬</string>
+    <string name="share_dialog_title">%1$s を友達にシェアする</string>
+    <string name="share_dialog_msg">%1$s は広告なし・完全オフライン・プライバシー安全です。お役に立ちましたら、ぜひご友人や同僚とシェアしてください！</string>
+    <string name="share_dialog_confirm">今すぐシェア 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">Android 12+ クイックウィジェット</string>
+    <string name="glance_widget_sync">ウィジェットを同期</string>
+</resources>

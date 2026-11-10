@@ -1,0 +1,157 @@
+<resources>
+    <!-- App Platform & Identity -->
+    <string name="app_name">CoinBridge</string>
+    <string name="splash_tagline">Chuyển đổi tiền tệ &amp; đơn vị nhanh chóng, ngoại tuyến, bảo mật</string>
+    <string name="splash_loading">Đang tải tỷ giá hối đoái mới nhất…</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_currency">Tiền tệ</string>
+    <string name="tab_unit">Đơn vị</string>
+    <string name="tab_bill_splitter">Chia hóa đơn</string>
+    <string name="tab_rate_trends">Biểu đồ</string>
+    <string name="tab_saved">Đã lưu &amp; Bảo mật</string>
+
+    <!-- General Actions & Labels -->
+    <string name="action_back">Quay lại</string>
+    <string name="action_close">Đóng</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="action_save">Lưu</string>
+    <string name="action_clear">Xóa</string>
+    <string name="action_clear_all">Xóa tất cả</string>
+    <string name="action_copy">Sao chép</string>
+    <string name="action_copied">Đã sao chép vào khay nhớ tạm</string>
+    <string name="action_search">Tìm kiếm</string>
+    <string name="action_sync">Đồng bộ</string>
+    <string name="action_settings">Cài đặt</string>
+    <string name="action_maybe_later">Để sau</string>
+    <string name="action_say_thanks">Ủng hộ tác giả</string>
+    <string name="status_offline">Ngoại tuyến</string>
+    <string name="status_online">Trực tuyến</string>
+
+    <!-- Currency Converter Screen -->
+    <string name="select_base_currency">Chọn đồng tiền gốc</string>
+    <string name="add_target_currency">Thêm đồng tiền quy đổi</string>
+    <string name="search_currency_placeholder">Tìm tiền tệ (ví dụ: VND, USD, BTC, JPY)</string>
+    <string name="base_currency_label">Tiền tệ gốc</string>
+    <string name="target_conversions_header">Quy đổi sang các loại tiền</string>
+    <string name="add_target_button">Thêm tiền tệ</string>
+    <string name="instant_conversion">Quy đổi tức thì</string>
+    <string name="last_synced">Lần đồng bộ cuối: %1$s</string>
+    <string name="calculations_completed">Đã hoàn thành %1$d phép tính!</string>
+    <string name="milestone_satisfaction_msg">CoinBridge cam kết 100% không quảng cáo và hỗ trợ ngoại tuyến. Nếu ứng dụng hữu ích trong công việc và du lịch, sự ủng hộ tự nguyện của bạn sẽ giúp duy trì phát triển độc lập!</string>
+    <string name="shake_detected_toast">Phát hiện lắc máy: Đã hoán đổi tiền tệ!</string>
+    <string name="live_rate_trends_card">Biểu đồ tỷ giá trực tiếp</string>
+
+    <!-- Rate Trends Screen -->
+    <string name="rate_trends_title">Lịch sử xu hướng tỷ giá</string>
+    <string name="historical_rate_label">Tỷ giá lịch sử %1$s ➔ %2$s</string>
+    <string name="fetching_rate_trends">Đang tải dữ liệu tỷ giá…</string>
+    <string name="no_historical_data">Không có dữ liệu lịch sử</string>
+    <string name="range_7d">7N</string>
+    <string name="range_30d">30N</string>
+    <string name="range_90d">90N</string>
+    <string name="range_1y">1N</string>
+    <string name="stat_low">Thấp nhất: %1$s</string>
+    <string name="stat_avg">Trung bình: %1$s</string>
+    <string name="stat_high">Cao nhất: %1$s</string>
+    <string name="stat_change">Biến động</string>
+
+    <!-- Smart Bill Splitter Screen -->
+    <string name="bill_splitter_title">Chia hóa đơn &amp; Tiền tip</string>
+    <string name="original_bill_amount">Số tiền hóa đơn gốc</string>
+    <string name="tip_percentage">Tỷ lệ tiền tip (%)</string>
+    <string name="split_count">Số người chia</string>
+    <string name="people_count">%1$d người</string>
+    <string name="person_single">1 người</string>
+    <string name="per_person_label">Mỗi người trả</string>
+    <string name="total_bill_incl_tip">Tổng cộng (kèm tip):</string>
+    <string name="tip_amount_label">Tiền tip (%1$d%%):</string>
+    <string name="conversion_rate_label">Tỷ giá quy đổi:</string>
+    <string name="home_currency_label">Tiền tệ nhà</string>
+    <string name="foreign_currency_label">Ngoại tệ</string>
+
+    <!-- Unit Converter Screen -->
+    <string name="unit_converter_title">Chuyển đổi đơn vị</string>
+    <string name="category_weight">Khối lượng &amp; Cân nặng</string>
+    <string name="category_length">Độ dài &amp; Khoảng cách</string>
+    <string name="category_volume">Thể tích &amp; Dung tích</string>
+    <string name="category_temperature">Nhiệt độ</string>
+    <string name="category_speed">Vận tốc</string>
+    <string name="search_unit_placeholder">Tìm đơn vị theo tên hoặc ký hiệu…</string>
+    <string name="all_category_equivalents">Các đơn vị tương đương %1$s</string>
+    <string name="tap_to_target_unit">Chạm để chọn quy đổi</string>
+    <string name="recent_unit_conversions">Lịch sử quy đổi gần đây</string>
+    <string name="no_recent_unit_conversions">Chưa có lịch sử chuyển đổi đơn vị nào.</string>
+    <string name="log_unit_conversion">Lưu vào lịch sử</string>
+
+    <!-- Favorites, History & Security Screen -->
+    <string name="saved_security_title">Đã lưu &amp; Bảo mật</string>
+    <string name="tab_favorites">Yêu thích</string>
+    <string name="tab_history">Lịch sử</string>
+    <string name="tab_settings">Cài đặt</string>
+    <string name="clear_history_dialog_title">Xóa toàn bộ lịch sử?</string>
+    <string name="clear_history_dialog_msg">Thao tác này sẽ xóa vĩnh viễn mọi bản ghi chuyển đổi tiền tệ và đơn vị trên thiết bị của bạn.</string>
+    <string name="no_favorite_currencies">Chưa có cặp tiền tệ yêu thích. Chạm biểu tượng sao để lưu lại.</string>
+    <string name="no_favorite_units">Chưa có cặp đơn vị yêu thích. Chạm biểu tượng sao để lưu lại.</string>
+    <string name="no_currency_history">Chưa có bản ghi chuyển đổi tiền tệ.</string>
+    <string name="no_unit_history">Chưa có bản ghi chuyển đổi đơn vị.</string>
+    <string name="privacy_tagline">100% Không Quảng Cáo • Không Thu Thập Dữ Liệu • Ngoại Tuyến</string>
+    <string name="rate_app_btn">Đánh giá ứng dụng</string>
+    <string name="share_app_btn">Chia sẻ</string>
+    <string name="privacy_biometric_lock">Quyền riêng tư &amp; Khóa sinh trắc học</string>
+    <string name="secure_financial_logs">Bảo vệ nhật ký tài chính và cài đặt</string>
+    <string name="lock_app_now">Khóa ứng dụng ngay</string>
+
+    <!-- Biometric Lock Screen -->
+    <string name="app_locked_title">CoinBridge đã khóa</string>
+    <string name="app_locked_subtitle">Vui lòng xác thực sinh trắc học để xem tỷ giá và lịch sử</string>
+    <string name="unlock_biometrics_btn">Mở khóa bằng vân tay / khuôn mặt</string>
+    <string name="use_passcode_btn">Sử dụng mã PIN thiết bị</string>
+
+    <!-- Shake Sensitivity Controller -->
+    <string name="shake_gesture_title">Cử chỉ lắc máy</string>
+    <string name="shake_gesture_subtitle">Lắc điện thoại để hoán đổi nhanh cặp tiền tệ</string>
+    <string name="shake_sensitivity_label">Độ nhạy: %1$s</string>
+    <string name="shake_tier_high">Cao</string>
+    <string name="shake_tier_high_desc">Phản hồi khi lắc nhẹ cổ tay</string>
+    <string name="shake_tier_standard">Tiêu chuẩn</string>
+    <string name="shake_tier_standard_desc">Lắc tay có chủ đích</string>
+    <string name="shake_tier_low">Thấp</string>
+    <string name="shake_tier_low_desc">Lắc mạnh (tránh nhầm lẫn trong túi quần)</string>
+    <string name="shake_preset_gentle">Nhẹ (1.8g)</string>
+    <string name="shake_preset_normal">Vừa (2.5g)</string>
+    <string name="shake_preset_firm">Mạnh (3.5g)</string>
+
+    <!-- Support Development & In-App Purchases -->
+    <string name="support_development_title">Ủng hộ phát triển</string>
+    <string name="support_coinbridge_header">Đồng hành cùng CoinBridge</string>
+    <string name="support_development_desc">100% không quảng cáo, bảo mật và ngoại tuyến. Sự phát triển độc lập có được nhờ sự ủng hộ của bạn.</string>
+    <string name="active_supporter_badge">Người ủng hộ tích cực (%1$s)</string>
+    <string name="supporter_thank_you">Xin chân thành cảm ơn! Mọi thông báo ủng hộ đã được tắt vĩnh viễn.</string>
+    <string name="google_play_purchase_title">Thanh toán qua Google Play</string>
+    <string name="native_play_billing">Hệ thống thanh toán Google Play chính thức</string>
+    <string name="paypal_support_title">PayPal &amp; Quét mã QR</string>
+    <string name="scan_with_camera">Quét bằng máy ảnh hoặc ứng dụng PayPal</string>
+    <string name="open_paypal">Mở PayPal</string>
+    <string name="kofi_support_title">Mời ly cà phê qua Ko-fi</string>
+    <string name="kofi_support_desc">Kênh ủng hộ trực tiếp dành cho lập trình viên độc lập.</string>
+    <string name="open_kofi">Mở trang Ko-fi</string>
+    <string name="copy_kofi_link">Sao chép liên kết Ko-fi</string>
+    <string name="tier_coffee">Mời ly cà phê ($1.99)</string>
+    <string name="tier_supporter">Gói Ủng Hộ ($4.99)</string>
+    <string name="tier_pro">Gói Đồng Hành ($9.99)</string>
+    <string name="tier_champion">Gói Quán Quân ($19.99)</string>
+
+    <!-- Engagement Dialogs: Rating & Sharing -->
+    <string name="rating_dialog_title">Bạn thấy %1$s thế nào?</string>
+    <string name="rating_dialog_question">Ứng dụng có giúp ích cho bạn trong việc quy đổi và tính toán không?</string>
+    <string name="rating_dialog_positive">Rất tuyệt vời! 👍</string>
+    <string name="rating_dialog_feedback">Cần cải thiện 💬</string>
+    <string name="share_dialog_title">Chia sẻ %1$s với bạn bè?</string>
+    <string name="share_dialog_msg">%1$s hoàn toàn không có quảng cáo, hoạt động ngoại tuyến và tôn trọng quyền riêng tư. Hãy chia sẻ cho bạn bè và đồng nghiệp nhé!</string>
+    <string name="share_dialog_confirm">Chia sẻ ngay 🚀</string>
+
+    <!-- Quick Glance Widget Preview -->
+    <string name="glance_widget_preview">Tiện ích nhanh Android 12+</string>
+    <string name="glance_widget_sync">Đồng bộ tiện ích màn hình chính</string>
+</resources>

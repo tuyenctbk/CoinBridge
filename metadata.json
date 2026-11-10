@@ -1,0 +1,6 @@
+{
+  "name": "CoinBridge",
+  "description": "Instant fiat & crypto currency converter with custom keypad, bill splitter, offline mode, and live rate trends.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
