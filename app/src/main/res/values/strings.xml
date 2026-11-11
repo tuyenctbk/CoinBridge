@@ -148,7 +148,7 @@
     <string name="rating_dialog_positive">Yes, loving it! 👍</string>
     <string name="rating_dialog_feedback">Needs work 💬</string>
     <string name="share_dialog_title">Share %1$s with Friends?</string>
-    <string name="share_dialog_msg">%1$s is 100% ad-free, works completely offline, and respects privacy. If you find it helpful, share it with family, colleagues, or fellow travelers!</string>
+    <string name="share_dialog_msg">%1$s is 100%% ad-free, works completely offline, and respects privacy. If you find it helpful, share it with family, colleagues, or fellow travelers!</string>
     <string name="share_dialog_confirm">Share Now 🚀</string>
 
     <!-- Quick Glance Widget Preview -->

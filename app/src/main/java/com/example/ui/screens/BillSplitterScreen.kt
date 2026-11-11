@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -50,6 +51,7 @@ import com.example.data.model.BillSplitResult
 import com.example.data.model.Currency
 import com.example.ui.calculator.ExpressionEvaluator.toCleanString
 import com.example.ui.components.CurrencySelectionSheet
+import com.example.ui.theme.dpadFocusable
 import com.example.ui.viewmodel.CoinBridgeViewModel
 
 @Composable
@@ -266,6 +268,7 @@ private fun BillDetailsCard(
                 Surface(
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(16.dp))
                         .clickable { onOpenForeignSheet() }
                         .testTag("foreign_currency_btn"),
                     color = MaterialTheme.colorScheme.primaryContainer
@@ -296,6 +299,7 @@ private fun BillDetailsCard(
                 Surface(
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(16.dp))
                         .clickable { onOpenHomeSheet() }
                         .testTag("home_currency_btn"),
                     color = MaterialTheme.colorScheme.surfaceVariant
@@ -348,7 +352,9 @@ private fun TipSelectorCard(
                         selected = tipPercentage == pct,
                         onClick = { onTipSelected(pct) },
                         label = { Text("${pct.toInt()}%") },
-                        modifier = Modifier.testTag("tip_chip_${pct.toInt()}")
+                        modifier = Modifier
+                            .testTag("tip_chip_${pct.toInt()}")
+                            .dpadFocusable(shape = RoundedCornerShape(12.dp))
                     )
                 }
             }
@@ -388,7 +394,9 @@ private fun SplitCounterCard(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(
                     onClick = { onCountChanged(splitCount - 1) },
-                    modifier = Modifier.testTag("split_minus")
+                    modifier = Modifier
+                        .testTag("split_minus")
+                        .dpadFocusable(shape = CircleShape)
                 ) {
                     Icon(Icons.Default.Remove, contentDescription = "Decrease")
                 }
@@ -402,7 +410,9 @@ private fun SplitCounterCard(
 
                 IconButton(
                     onClick = { onCountChanged(splitCount + 1) },
-                    modifier = Modifier.testTag("split_plus")
+                    modifier = Modifier
+                        .testTag("split_plus")
+                        .dpadFocusable(shape = CircleShape)
                 ) {
                     Icon(Icons.Default.Add, contentDescription = "Increase")
                 }

@@ -42,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.model.Currency
+import com.example.ui.theme.dpadFocusable
 
 enum class CurrencyCategoryFilter {
     ALL, POPULAR, FIAT, CRYPTO
@@ -125,7 +126,9 @@ fun CurrencySelectionSheet(
                         selected = selectedCategory == cat,
                         onClick = { selectedCategory = cat },
                         label = { Text(cat.name) },
-                        modifier = Modifier.testTag("filter_${cat.name}")
+                        modifier = Modifier
+                            .testTag("filter_${cat.name}")
+                            .dpadFocusable(shape = RoundedCornerShape(12.dp))
                     )
                 }
             }
@@ -162,6 +165,7 @@ private fun CurrencyRowItem(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
+            .dpadFocusable(shape = RoundedCornerShape(12.dp))
             .clickable { onClick() }
             .testTag("currency_item_${currency.code}"),
         color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f)

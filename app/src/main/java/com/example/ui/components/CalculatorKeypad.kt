@@ -5,6 +5,7 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,11 +19,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
@@ -39,7 +44,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun CalculatorKeypad(
     onKeyClick: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isCompact: Boolean = false
 ) {
     val rows = listOf(
         listOf("C", "⌫", "%", "÷"),
@@ -59,17 +65,18 @@ fun CalculatorKeypad(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(12.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+                .padding(if (isCompact) 8.dp else 12.dp),
+            verticalArrangement = Arrangement.spacedBy(if (isCompact) 6.dp else 8.dp)
         ) {
             rows.forEach { rowKeys ->
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.spacedBy(if (isCompact) 6.dp else 8.dp)
                 ) {
                     rowKeys.forEach { key ->
                         TactileKeypadButton(
                             key = key,
+                            isCompact = isCompact,
                             onClick = { onKeyClick(key) },
                             onLongClick = if (key == "⌫") { { onKeyClick("C") } } else null,
                             modifier = Modifier
@@ -87,6 +94,7 @@ fun CalculatorKeypad(
 @Composable
 private fun TactileKeypadButton(
     key: String,
+    isCompact: Boolean,
     onClick: () -> Unit,
     onLongClick: (() -> Unit)? = null,
     modifier: Modifier = Modifier
@@ -95,6 +103,7 @@ private fun TactileKeypadButton(
     val haptic = LocalHapticFeedback.current
     val coroutineScope = rememberCoroutineScope()
     val scale = remember { Animatable(1f) }
+    var isFocused by remember { mutableStateOf(false) }
 
     val isOperator = key == "+" || key == "-" || key == "×" || key == "÷"
     val isAction = key == "C" || key == "⌫" || key == "%"
@@ -116,13 +125,20 @@ private fun TactileKeypadButton(
 
     Box(
         modifier = modifier
-            .height(54.dp)
+            .height(if (isCompact) 42.dp else 54.dp)
+            .onFocusChanged { isFocused = it.isFocused }
             .graphicsLayer {
-                scaleX = scale.value
-                scaleY = scale.value
+                val s = if (isFocused) scale.value * 1.05f else scale.value
+                scaleX = s
+                scaleY = s
             }
             .clip(RoundedCornerShape(16.dp))
-            .background(backgroundColor)
+            .background(if (isFocused) backgroundColor.copy(alpha = 0.9f) else backgroundColor)
+            .border(
+                width = if (isFocused) 2.5.dp else 0.dp,
+                color = if (isFocused) Color(0xFF38BDF8) else Color.Transparent,
+                shape = RoundedCornerShape(16.dp)
+            )
             .combinedClickable(
                 onClick = {
                     // Tactile Haptic Feedback
@@ -155,7 +171,7 @@ private fun TactileKeypadButton(
     ) {
         Text(
             text = key,
-            fontSize = if (isOperator || isAction) 20.sp else 22.sp,
+            fontSize = if (isCompact) (if (isOperator || isAction) 17.sp else 19.sp) else (if (isOperator || isAction) 20.sp else 22.sp),
             fontWeight = FontWeight.Bold,
             color = contentColor
         )

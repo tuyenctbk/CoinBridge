@@ -67,6 +67,7 @@ import androidx.compose.ui.unit.sp
 import com.example.data.local.UnitConversionHistoryEntity
 import com.example.data.model.PhysicalUnit
 import com.example.data.model.UnitCategory
+import com.example.ui.theme.dpadFocusable
 import com.example.ui.calculator.ExpressionEvaluator.toCleanString
 import com.example.ui.components.CalculatorKeypad
 import com.example.ui.viewmodel.CoinBridgeViewModel
@@ -126,14 +127,15 @@ fun UnitConverterScreen(
             .padding(horizontal = 16.dp)
     ) {
         val isWideScreen = maxWidth >= 600.dp
+        val isCompactHeight = maxHeight < 580.dp
 
         if (isWideScreen) {
-            // Tablet / Wide 2-Column Canonical Layout
+            // Tablet & Android TV 2-Column Canonical Layout
             Row(
                 modifier = Modifier.fillMaxSize(),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // Left Column: Category Tabs, Conversion Cards, All Equivalents
+                // Left Column: Category Tabs, Conversion Cards, All Equivalents, History
                 Column(
                     modifier = Modifier
                         .weight(1.2f)
@@ -194,35 +196,54 @@ fun UnitConverterScreen(
                             )
                         }
 
+                        if (isCompactHeight) {
+                            item {
+                                UnitRecentHistoryCard(
+                                    historyList = unitHistory,
+                                    onSelectHistory = { history ->
+                                        val f = PhysicalUnit.find(history.fromUnitId)
+                                        val t = PhysicalUnit.find(history.toUnitId)
+                                        viewModel.setUnitCategory(f.category)
+                                        viewModel.setUnitFrom(f)
+                                        viewModel.setUnitTo(t)
+                                    },
+                                    onClearHistory = { viewModel.clearUnitHistory() },
+                                    modifier = Modifier.padding(vertical = 4.dp)
+                                )
+                            }
+                        }
+
                         item { Spacer(modifier = Modifier.height(8.dp)) }
                     }
                 }
 
-                // Right Column: Keypad & Recent History
+                // Right Column: Dedicated Keypad (and History if tall tablet)
                 Column(
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxHeight(),
-                    verticalArrangement = Arrangement.SpaceBetween
+                    verticalArrangement = if (isCompactHeight) Arrangement.Center else Arrangement.SpaceBetween
                 ) {
-                    // Recent Unit History Card
-                    UnitRecentHistoryCard(
-                        historyList = unitHistory,
-                        onSelectHistory = { history ->
-                            val f = PhysicalUnit.find(history.fromUnitId)
-                            val t = PhysicalUnit.find(history.toUnitId)
-                            viewModel.setUnitCategory(f.category)
-                            viewModel.setUnitFrom(f)
-                            viewModel.setUnitTo(t)
-                        },
-                        onClearHistory = { viewModel.clearUnitHistory() },
-                        modifier = Modifier
-                            .weight(1f)
-                            .padding(bottom = 12.dp)
-                    )
+                    if (!isCompactHeight) {
+                        UnitRecentHistoryCard(
+                            historyList = unitHistory,
+                            onSelectHistory = { history ->
+                                val f = PhysicalUnit.find(history.fromUnitId)
+                                val t = PhysicalUnit.find(history.toUnitId)
+                                viewModel.setUnitCategory(f.category)
+                                viewModel.setUnitFrom(f)
+                                viewModel.setUnitTo(t)
+                            },
+                            onClearHistory = { viewModel.clearUnitHistory() },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(bottom = 12.dp)
+                        )
+                    }
 
                     CalculatorKeypad(
                         onKeyClick = { viewModel.onUnitKeyInput(it) },
+                        isCompact = isCompactHeight,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                 }
@@ -344,6 +365,7 @@ private fun UnitCategorySelector(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(14.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(14.dp))
                         .clickable { onSelectCategory(category) }
                         .testTag("unit_tab_${category.name.lowercase()}"),
                     color = if (isSelected) MaterialTheme.colorScheme.primary else Color.Transparent,
@@ -391,7 +413,7 @@ private fun SourceUnitCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(14.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -401,6 +423,7 @@ private fun SourceUnitCard(
                 Surface(
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(16.dp))
                         .clickable { onOpenPicker() }
                         .testTag("source_unit_selector"),
                     color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)
@@ -425,7 +448,9 @@ private fun SourceUnitCard(
 
                 IconButton(
                     onClick = onToggleKeypad,
-                    modifier = Modifier.testTag("toggle_unit_keypad")
+                    modifier = Modifier
+                        .testTag("toggle_unit_keypad")
+                        .dpadFocusable(shape = RoundedCornerShape(50))
                 ) {
                     Icon(
                         imageVector = Icons.Default.Keyboard,
@@ -435,7 +460,7 @@ private fun SourceUnitCard(
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             // Animated Input Expression
             AnimatedContent(
@@ -445,7 +470,7 @@ private fun SourceUnitCard(
             ) { targetText ->
                 Text(
                     text = targetText,
-                    fontSize = 36.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                     modifier = Modifier
@@ -477,8 +502,9 @@ private fun SwapUnitsRow(onSwap: () -> Unit) {
     ) {
         Surface(
             modifier = Modifier
-                .size(44.dp)
+                .size(40.dp)
                 .clip(CircleShape)
+                .dpadFocusable(shape = CircleShape)
                 .clickable { onSwap() }
                 .testTag("swap_units_btn"),
             color = MaterialTheme.colorScheme.surface,
@@ -489,7 +515,7 @@ private fun SwapUnitsRow(onSwap: () -> Unit) {
                     imageVector = Icons.Default.SwapVert,
                     contentDescription = "Swap Units",
                     tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(24.dp)
+                    modifier = Modifier.size(22.dp)
                 )
             }
         }
@@ -519,7 +545,7 @@ private fun TargetUnitCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(14.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -529,6 +555,7 @@ private fun TargetUnitCard(
                 Surface(
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(16.dp))
                         .clickable { onOpenPicker() }
                         .testTag("target_unit_selector"),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)

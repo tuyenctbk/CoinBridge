@@ -148,7 +148,7 @@
     <string name="rating_dialog_positive">Ja, sehr gut! 👍</string>
     <string name="rating_dialog_feedback">Verbesserungswürdig 💬</string>
     <string name="share_dialog_title">%1$s mit Freunden teilen?</string>
-    <string name="share_dialog_msg">%1$s ist 100% werbefrei, funktioniert offline und schützt Ihre Daten. Wenn Ihnen die App gefällt, teilen Sie sie gerne!</string>
+    <string name="share_dialog_msg">%1$s ist 100%% werbefrei, funktioniert offline und schützt Ihre Daten. Wenn Ihnen die App gefällt, teilen Sie sie gerne!</string>
     <string name="share_dialog_confirm">Jetzt teilen 🚀</string>
 
     <!-- Quick Glance Widget Preview -->

@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ui.components.CurrencySelectionSheet
 import com.example.ui.components.RateTrendChart
+import com.example.ui.theme.dpadFocusable
 import com.example.ui.viewmodel.CoinBridgeViewModel
 
 @Composable
@@ -188,6 +189,7 @@ private fun PairSelectionCard(
             Surface(
                 modifier = Modifier
                     .clip(RoundedCornerShape(16.dp))
+                    .dpadFocusable(shape = RoundedCornerShape(16.dp))
                     .clickable { onOpenFromSheet() }
                     .testTag("trend_from_btn"),
                 color = MaterialTheme.colorScheme.surfaceVariant
@@ -204,7 +206,9 @@ private fun PairSelectionCard(
 
             IconButton(
                 onClick = onSwap,
-                modifier = Modifier.testTag("trend_swap_btn")
+                modifier = Modifier
+                    .testTag("trend_swap_btn")
+                    .dpadFocusable(shape = RoundedCornerShape(50))
             ) {
                 Icon(
                     imageVector = Icons.Default.SwapHoriz,
@@ -216,6 +220,7 @@ private fun PairSelectionCard(
             Surface(
                 modifier = Modifier
                     .clip(RoundedCornerShape(16.dp))
+                    .dpadFocusable(shape = RoundedCornerShape(16.dp))
                     .clickable { onOpenToSheet() }
                     .testTag("trend_to_btn"),
                 color = MaterialTheme.colorScheme.surfaceVariant
@@ -262,7 +267,9 @@ private fun TimeHorizonCard(
                         selected = daysRange == days,
                         onClick = { onRangeSelected(days) },
                         label = { Text(label) },
-                        modifier = Modifier.testTag("range_chip_$days")
+                        modifier = Modifier
+                            .testTag("range_chip_$days")
+                            .dpadFocusable(shape = RoundedCornerShape(12.dp))
                     )
                 }
             }

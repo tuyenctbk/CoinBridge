@@ -65,6 +65,7 @@ import com.example.ui.components.CalculatorKeypad
 import com.example.ui.components.CurrencySelectionSheet
 import com.example.ui.components.RateTrendChart
 import com.example.ui.components.WidgetPreviewCard
+import com.example.ui.theme.dpadFocusable
 import com.example.ui.donation.DonationManager
 import com.example.ui.viewmodel.CoinBridgeViewModel
 
@@ -111,9 +112,10 @@ fun ConverterScreen(
             .padding(horizontal = 16.dp)
     ) {
         val isWideScreen = maxWidth >= 600.dp
+        val isCompactHeight = maxHeight < 580.dp
 
         if (isWideScreen) {
-            // Adaptive 2-Column Canonical Layout for Tablets & Wide Screens
+            // Adaptive 2-Column Canonical Layout for Tablets & Android TV
             Row(
                 modifier = Modifier.fillMaxSize(),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
@@ -174,30 +176,50 @@ fun ConverterScreen(
                                 targetCurrencies = targetCurrencies
                             )
                         }
+
+                        // On compact height (like Android TV 1080p landscape), place Widget preview here in scrollable list
+                        if (isCompactHeight) {
+                            item {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                val firstTarget = targetCurrencies.firstOrNull() ?: Currency.ALL_CURRENCIES.first()
+                                val rate = convertedValues[firstTarget.code] ?: 1.0
+                                WidgetPreviewCard(
+                                    baseCurrency = baseCurrency,
+                                    targetCurrency = firstTarget,
+                                    rate = if (evaluatedAmount > 0) rate / evaluatedAmount else rate,
+                                    isOffline = isOffline,
+                                    onSwap = { viewModel.swapBaseWithTarget(firstTarget) },
+                                    onRefresh = { viewModel.refreshRates() }
+                                )
+                            }
+                        }
                     }
                 }
 
-                // Right Column: Keypad & Widget Preview
+                // Right Column: Dedicated Keypad (and Widget Preview if tall tablet)
                 Column(
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxHeight(),
-                    verticalArrangement = Arrangement.SpaceBetween
+                    verticalArrangement = if (isCompactHeight) Arrangement.Center else Arrangement.SpaceBetween
                 ) {
-                    val firstTarget = targetCurrencies.firstOrNull() ?: Currency.ALL_CURRENCIES.first()
-                    val rate = convertedValues[firstTarget.code] ?: 1.0
-                    WidgetPreviewCard(
-                        baseCurrency = baseCurrency,
-                        targetCurrency = firstTarget,
-                        rate = if (evaluatedAmount > 0) rate / evaluatedAmount else rate,
-                        isOffline = isOffline,
-                        onSwap = { viewModel.swapBaseWithTarget(firstTarget) },
-                        onRefresh = { viewModel.refreshRates() },
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
+                    if (!isCompactHeight) {
+                        val firstTarget = targetCurrencies.firstOrNull() ?: Currency.ALL_CURRENCIES.first()
+                        val rate = convertedValues[firstTarget.code] ?: 1.0
+                        WidgetPreviewCard(
+                            baseCurrency = baseCurrency,
+                            targetCurrency = firstTarget,
+                            rate = if (evaluatedAmount > 0) rate / evaluatedAmount else rate,
+                            isOffline = isOffline,
+                            onSwap = { viewModel.swapBaseWithTarget(firstTarget) },
+                            onRefresh = { viewModel.refreshRates() },
+                            modifier = Modifier.padding(top = 8.dp)
+                        )
+                    }
 
                     CalculatorKeypad(
                         onKeyClick = { viewModel.onKeyInput(it) },
+                        isCompact = isCompactHeight,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                 }
@@ -466,7 +488,9 @@ private fun TargetHeaderRow(onAddTarget: () -> Unit) {
 
         OutlinedButton(
             onClick = onAddTarget,
-            modifier = Modifier.testTag("add_target_btn")
+            modifier = Modifier
+                .testTag("add_target_btn")
+                .dpadFocusable(shape = RoundedCornerShape(24.dp))
         ) {
             Icon(Icons.Default.Add, contentDescription = "Add Target")
             Spacer(modifier = Modifier.width(4.dp))
@@ -505,6 +529,7 @@ private fun BaseCurrencyCard(
                 Surface(
                     modifier = Modifier
                         .clip(RoundedCornerShape(16.dp))
+                        .dpadFocusable(shape = RoundedCornerShape(16.dp))
                         .clickable { onOpenSheet() }
                         .testTag("base_currency_selector"),
                     color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)
@@ -525,7 +550,12 @@ private fun BaseCurrencyCard(
                     }
                 }
 
-                IconButton(onClick = onToggleKeypad, modifier = Modifier.testTag("toggle_keypad")) {
+                IconButton(
+                    onClick = onToggleKeypad,
+                    modifier = Modifier
+                        .testTag("toggle_keypad")
+                        .dpadFocusable(shape = RoundedCornerShape(50))
+                ) {
                     Icon(
                         imageVector = Icons.Default.Keyboard,
                         contentDescription = "Keypad",

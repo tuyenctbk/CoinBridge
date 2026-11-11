@@ -427,6 +427,16 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
+    var activeTab: String = "CONVERTER"
+
+    fun onHardwareKeyInput(key: String) {
+        when (activeTab) {
+            "CONVERTER" -> onKeyInput(key)
+            "UNIT" -> onUnitKeyInput(key)
+            else -> onKeyInput(key)
+        }
+    }
+
     fun recalculateUnitConversions() {
         val amount = _unitEvaluatedAmount.value
         val from = _unitFrom.value

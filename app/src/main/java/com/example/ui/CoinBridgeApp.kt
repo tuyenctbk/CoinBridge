@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CurrencyExchange
 import androidx.compose.material.icons.filled.Favorite
@@ -76,6 +77,7 @@ import com.example.ui.screens.SplashScreen
 import com.example.ui.screens.SupportDevelopmentScreen
 import com.example.ui.screens.TrendsScreen
 import com.example.ui.screens.UnitConverterScreen
+import com.example.ui.theme.dpadFocusable
 import com.example.ui.viewmodel.CoinBridgeViewModel
 
 import androidx.compose.ui.res.stringResource
@@ -122,6 +124,10 @@ fun CoinBridgeApp(
     val targetCurrencies by viewModel.targetCurrencies.collectAsState()
     val isSupporter by DonationManager.isSupporter.collectAsState()
     val activeMilestone by MilestoneTracker.activeMilestone.collectAsState()
+
+    androidx.compose.runtime.LaunchedEffect(currentTab) {
+        viewModel.activeTab = currentTab.name
+    }
 
     val context = LocalContext.current
 
@@ -202,7 +208,9 @@ fun CoinBridgeApp(
                     // Support / Donation Heart Action
                     IconButton(
                         onClick = { showSupportScreen = true },
-                        modifier = Modifier.testTag("support_topbar_btn")
+                        modifier = Modifier
+                            .testTag("support_topbar_btn")
+                            .dpadFocusable(shape = CircleShape)
                     ) {
                         Icon(
                             imageVector = if (isSupporter) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
@@ -215,7 +223,9 @@ fun CoinBridgeApp(
                     if (isBiometricLockEnabled) {
                         IconButton(
                             onClick = { viewModel.lockApp() },
-                            modifier = Modifier.testTag("lock_app_topbar")
+                            modifier = Modifier
+                                .testTag("lock_app_topbar")
+                                .dpadFocusable(shape = CircleShape)
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Lock,
@@ -231,7 +241,9 @@ fun CoinBridgeApp(
                             val target = targetCurrencies.firstOrNull()?.code ?: "EUR"
                             viewModel.toggleFavoritePair(baseCurrency.code, target)
                         },
-                        modifier = Modifier.testTag("star_favorite_topbar")
+                        modifier = Modifier
+                            .testTag("star_favorite_topbar")
+                            .dpadFocusable(shape = CircleShape)
                     ) {
                         Icon(
                             imageVector = Icons.Default.Star,
@@ -243,7 +255,9 @@ fun CoinBridgeApp(
                     // Refresh Button
                     IconButton(
                         onClick = { viewModel.refreshRates() },
-                        modifier = Modifier.testTag("refresh_rates_topbar")
+                        modifier = Modifier
+                            .testTag("refresh_rates_topbar")
+                            .dpadFocusable(shape = CircleShape)
                     ) {
                         Icon(
                             imageVector = Icons.Default.Refresh,
@@ -274,7 +288,9 @@ fun CoinBridgeApp(
                             )
                         },
                         label = { Text(stringResource(tab.titleRes)) },
-                        modifier = Modifier.testTag("tab_${tab.name.lowercase()}")
+                        modifier = Modifier
+                            .testTag("tab_${tab.name.lowercase()}")
+                            .dpadFocusable(shape = RoundedCornerShape(16.dp))
                     )
                 }
             }

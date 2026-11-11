@@ -148,7 +148,7 @@
     <string name="rating_dialog_positive">¡Sí, me encanta! 👍</string>
     <string name="rating_dialog_feedback">Debe mejorar 💬</string>
     <string name="share_dialog_title">¿Compartir %1$s con amigos?</string>
-    <string name="share_dialog_msg">%1$s es 100% sin publicidad, funciona sin conexión y respeta tu privacidad. ¡Si te gusta, compártelo con familiares, colegas o viajeros!</string>
+    <string name="share_dialog_msg">%1$s es 100%% sin publicidad, funciona sin conexión y respeta tu privacidad. ¡Si te gusta, compártelo con familiares, colegas o viajeros!</string>
     <string name="share_dialog_confirm">Compartir ahora 🚀</string>
 
     <!-- Quick Glance Widget Preview -->
