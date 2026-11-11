@@ -11,6 +11,7 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.BillingResult
+import com.android.billingclient.api.PendingPurchasesParams
 import com.android.billingclient.api.ProductDetails
 import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesUpdatedListener
@@ -75,9 +76,13 @@ object DonationManager {
 
     private fun initializeBillingClient(context: Context) {
         try {
+            val pendingPurchasesParams = PendingPurchasesParams.newBuilder()
+                .enableOneTimeProducts()
+                .build()
+
             billingClient = BillingClient.newBuilder(context)
                 .setListener(purchasesUpdatedListener)
-                .enablePendingPurchases()
+                .enablePendingPurchases(pendingPurchasesParams)
                 .build()
 
             connectToBillingService()
@@ -130,9 +135,9 @@ object DonationManager {
             .setProductList(productList)
             .build()
 
-        billingClient?.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
+        billingClient?.queryProductDetailsAsync(params) { billingResult, queryProductDetailsResult ->
             if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                for (productDetails in productDetailsList) {
+                for (productDetails in queryProductDetailsResult.productDetailsList) {
                     productDetailsMap[productDetails.productId] = productDetails
                 }
             }
