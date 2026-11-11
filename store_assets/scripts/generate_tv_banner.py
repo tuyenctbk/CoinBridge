@@ -234,3 +234,4 @@ final_tv_banner_rgb.paste(final_tv_banner, mask=final_tv_banner.split()[3])
 out_path = "store_assets/tv_banner.png"
 final_tv_banner_rgb.save(out_path, "PNG", optimize=True)
 print(f"Successfully generated {out_path} with size {W}x{H} (16:9 24-bit PNG).")
+
