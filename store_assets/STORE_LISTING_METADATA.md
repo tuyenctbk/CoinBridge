@@ -10,6 +10,7 @@ This document contains all store listing metadata, copy text, graphic assets ref
 | :--- | :--- | :--- |
 | **App Icon** | [`ic_launcher_512.png`](file:///Users/user/antigravity/CoinBridge/store_assets/ic_launcher_512.png) | 512 × 512 px, 32-bit PNG |
 | **Feature Graphic** | [`feature_graphic.png`](file:///Users/user/antigravity/CoinBridge/store_assets/feature_graphic.png) | 1024 × 500 px, 24-bit RGB PNG (no alpha) |
+| **TV Banner** | [`tv_banner.png`](file:///Users/user/antigravity/CoinBridge/store_assets/tv_banner.png) | 1280 × 720 px, 16:9 24-bit RGB PNG (no alpha) |
 | **Phone Screenshots (8)** | [`store_assets/screenshots_phone/`](file:///Users/user/antigravity/CoinBridge/store_assets/screenshots_phone/) | 1080 × 2400 px, 8 feature showcases |
 | **Android TV Screenshots (4)** | [`store_assets/screenshots_tv/`](file:///Users/user/antigravity/CoinBridge/store_assets/screenshots_tv/) | 1920 × 1080 px, 16:9 Leanback showcases |
 | **Signed Release App Bundle** | [`app-release.aab`](file:///Users/user/antigravity/CoinBridge/app/build/outputs/bundle/release/app-release.aab) | ~16 MB, Signed with `common_release_key.jks` |
