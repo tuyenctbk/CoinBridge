@@ -258,6 +258,7 @@ private fun BillDetailsCard(
                         .weight(1f)
                         .testTag("bill_amount_input"),
                     label = { Text("Original Bill Amount") },
+                    placeholder = { Text("0.00") },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     singleLine = true,
                     shape = RoundedCornerShape(16.dp)

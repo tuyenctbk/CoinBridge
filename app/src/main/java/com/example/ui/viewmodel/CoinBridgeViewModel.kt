@@ -73,7 +73,7 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
     val biometricStatus: StateFlow<BiometricStatus> = _biometricStatus.asStateFlow()
 
     // Bill Splitter State
-    private val _billAmountInput = MutableStateFlow("45.00")
+    private val _billAmountInput = MutableStateFlow("")
     val billAmountInput: StateFlow<String> = _billAmountInput.asStateFlow()
 
     private val _billTipPercentage = MutableStateFlow(15f)

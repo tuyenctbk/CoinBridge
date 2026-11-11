@@ -1,11 +1,5 @@
 package com.example.ui.screens
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
-import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -27,12 +21,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FreeBreakfast
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Launch
-import androidx.compose.material.icons.filled.Payment
 import androidx.compose.material.icons.filled.RocketLaunch
 import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Star
@@ -41,12 +32,9 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
-import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -55,9 +43,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -93,8 +78,6 @@ fun SupportDevelopmentScreen(
     val isSupporter by DonationManager.isSupporter.collectAsState()
     val supporterTier by DonationManager.supporterTier.collectAsState()
 
-    var selectedPaypalPreset by remember { mutableStateOf("5") }
-
     val playTiers = listOf(
         DonationTierItem(
             productId = DonationManager.PRODUCT_TIER_199,
@@ -126,24 +109,6 @@ fun SupportDevelopmentScreen(
             icon = Icons.Default.Star
         )
     )
-
-    fun copyToClipboard(text: String, label: String) {
-        val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText(label, text)
-        clipboard.setPrimaryClip(clip)
-        Toast.makeText(context, "$label copied to clipboard", Toast.LENGTH_SHORT).show()
-    }
-
-    fun openUrl(url: String) {
-        try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            }
-            context.startActivity(intent)
-        } catch (e: Exception) {
-            Toast.makeText(context, "Could not open browser link", Toast.LENGTH_SHORT).show()
-        }
-    }
 
     Scaffold(
         modifier = modifier.testTag("support_dev_screen"),
@@ -283,49 +248,7 @@ fun SupportDevelopmentScreen(
                     }
                 }
 
-                // Section 2: PayPal Direct & Links
-                item {
-                    Text(
-                        text = "PayPal & Direct Tip Jar",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-                }
-
-                item {
-                    PayPalDonationCard(
-                        selectedPreset = selectedPaypalPreset,
-                        onPresetSelected = { selectedPaypalPreset = it },
-                        onOpenPayPal = { amount ->
-                            val url = "https://paypal.me/coinbridge/$amount"
-                            openUrl(url)
-                        },
-                        onCopyLink = { amount ->
-                            val url = "https://paypal.me/coinbridge/$amount"
-                            copyToClipboard(url, "PayPal Link")
-                        }
-                    )
-                }
-
-                // Section 3: Web Platform (Ko-fi)
-                item {
-                    Text(
-                        text = "Web Platform Tip Jar (Ko-fi)",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-                }
-
-                item {
-                    KofiDonationCard(
-                        onOpenKofi = { openUrl("https://ko-fi.com/coinbridge") },
-                        onCopyKofiLink = { copyToClipboard("https://ko-fi.com/coinbridge", "Ko-fi Page Link") }
-                    )
-                }
-
-                // Section 4: Transparency FAQ
+                // Section 2: Transparency FAQ
                 item {
                     TransparencyFaqCard()
                 }
@@ -521,189 +444,6 @@ private fun PlayTierCard(
                 )
             ) {
                 Text(text = "Tip ${tier.price} via Google Play", fontWeight = FontWeight.Bold, fontSize = 12.sp)
-            }
-        }
-    }
-}
-
-@Composable
-private fun PayPalDonationCard(
-    selectedPreset: String,
-    onPresetSelected: (String) -> Unit,
-    onOpenPayPal: (String) -> Unit,
-    onCopyLink: (String) -> Unit
-) {
-    val presets = listOf("3", "5", "10", "20")
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .testTag("paypal_donation_card"),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(18.dp)
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    imageVector = Icons.Default.Payment,
-                    contentDescription = null,
-                    tint = Color(0xFF003087),
-                    modifier = Modifier.size(22.dp)
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-                Column {
-                    Text(
-                        text = "PayPal Direct Transfer",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        text = "Instant transfer via PayPal.me deep link",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(14.dp))
-
-            Text(
-                text = "Select Tip Amount (USD):",
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(6.dp))
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                presets.forEach { amount ->
-                    val isSelected = selectedPreset == amount
-                    FilterChip(
-                        selected = isSelected,
-                        onClick = { onPresetSelected(amount) },
-                        label = { Text("$$amount") },
-                        modifier = Modifier
-                            .weight(1f)
-                            .testTag("paypal_preset_$amount"),
-                        colors = FilterChipDefaults.filterChipColors(
-                            selectedContainerColor = MaterialTheme.colorScheme.primary,
-                            selectedLabelColor = Color.White
-                        )
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(14.dp))
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Button(
-                    onClick = { onOpenPayPal(selectedPreset) },
-                    modifier = Modifier
-                        .weight(1f)
-                        .testTag("open_paypal_btn"),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.Launch, contentDescription = null, modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text("Open PayPal ($$selectedPreset)")
-                }
-
-                OutlinedButton(
-                    onClick = { onCopyLink(selectedPreset) },
-                    modifier = Modifier.testTag("copy_paypal_btn"),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy Link", modifier = Modifier.size(16.dp))
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun KofiDonationCard(
-    onOpenKofi: () -> Unit,
-    onCopyKofiLink: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .testTag("kofi_donation_card"),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(18.dp)
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    imageVector = Icons.Default.FreeBreakfast,
-                    contentDescription = null,
-                    tint = Color(0xFFFF5E5B),
-                    modifier = Modifier.size(22.dp)
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-                Column {
-                    Text(
-                        text = "Ko-fi Tip Jar",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        text = "Support via Ko-fi web page with zero platform fees",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(14.dp))
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Button(
-                    onClick = onOpenKofi,
-                    modifier = Modifier
-                        .weight(1f)
-                        .testTag("open_kofi_btn"),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFF5E5B),
-                        contentColor = Color.White
-                    )
-                ) {
-                    Icon(Icons.Default.Launch, contentDescription = null, modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text("Support on Ko-fi ☕")
-                }
-
-                OutlinedButton(
-                    onClick = onCopyKofiLink,
-                    modifier = Modifier.testTag("copy_kofi_btn"),
-                    shape = RoundedCornerShape(12.dp)
-                ) {
-                    Icon(Icons.Default.ContentCopy, contentDescription = "Copy Link", modifier = Modifier.size(16.dp))
-                }
             }
         }
     }

@@ -78,3 +78,4 @@ All store graphic assets and metadata are located in [`store_assets/`](store_ass
 - **Mobile Screenshots (8)**: [`store_assets/screenshots_phone/`](store_assets/screenshots_phone/)
 - **Android TV Screenshots (4)**: [`store_assets/screenshots_tv/`](store_assets/screenshots_tv/)
 - **Store Listing Metadata**: [`store_assets/STORE_LISTING_METADATA.md`](store_assets/STORE_LISTING_METADATA.md)
+

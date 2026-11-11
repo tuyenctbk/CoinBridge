@@ -6,6 +6,7 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 import com.android.billingclient.api.AcknowledgePurchaseParams
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
@@ -176,11 +177,11 @@ object DonationManager {
 
             val result = billingClient?.launchBillingFlow(activity, billingFlowParams)
             if (result?.responseCode != BillingClient.BillingResponseCode.OK) {
-                completeDonation(context, fallbackTierName)
+                Log.w(TAG, "Launch billing flow failed: ${result?.debugMessage}")
             }
         } else {
-            // Fallback for emulator / non-Google Play environment or test execution
-            completeDonation(context, fallbackTierName)
+            Log.w(TAG, "Billing not available for $productId")
+            Toast.makeText(context, "Google Play Store billing is currently connecting or unavailable.", Toast.LENGTH_SHORT).show()
         }
     }
 
