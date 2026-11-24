@@ -30,6 +30,10 @@ class MainActivity : FragmentActivity() {
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        // Only intercept direct numeric/calc keys when on Converter or Unit tab without modals/lock
+        if (!viewModel.isHardwareCalcInputAllowed()) {
+            return super.onKeyDown(keyCode, event)
+        }
         // TV remote and hardware keyboard direct numeric/calc input
         val keyChar = when (keyCode) {
             KeyEvent.KEYCODE_0, KeyEvent.KEYCODE_NUMPAD_0 -> "0"

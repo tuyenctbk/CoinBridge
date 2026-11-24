@@ -134,12 +134,13 @@ class CurrencyRepository(context: Context) {
     }
 
     private suspend fun loadOfflineRates(baseCode: String): Map<String, Double> {
+        val upperBase = baseCode.uppercase()
         val map = mutableMapOf<String, Double>()
-        map[baseCode.uppercase()] = 1.0
-        Currency.ALL_CURRENCIES.forEach { target ->
-            val entity = dao.getRate("${baseCode.uppercase()}_${target.code.uppercase()}")
-            if (entity != null) {
-                map[target.code] = entity.rate
+        val cached = dao.getRatesForBase(upperBase)
+        if (cached.isNotEmpty()) {
+            map[upperBase] = 1.0
+            cached.forEach { entity ->
+                map[entity.toCode] = entity.rate
                 if (lastSyncTimestamp == 0L) {
                     lastSyncTimestamp = entity.timestamp
                 }
@@ -154,21 +155,24 @@ class CurrencyRepository(context: Context) {
         toCode: String,
         currentRates: Map<String, Double>
     ): Double {
-        if (fromCode.equals(toCode, ignoreCase = true)) return amount
+        val fromUpper = fromCode.uppercase()
+        val toUpper = toCode.uppercase()
+        if (fromUpper == toUpper) return amount
 
-        // Direct lookup if rates map is relative to fromCode
-        val directRate = currentRates[toCode.uppercase()]
-        if (directRate != null && directRate > 0.0) {
-            return amount * directRate
+        val fromRate = currentRates[fromUpper]
+        val toRate = currentRates[toUpper]
+
+        // Convert accurately whether currentRates is keyed to fromCode (fromRate == 1.0)
+        // or to a different active base currency (cross-rate via common base).
+        if (fromRate != null && fromRate > 0.0 && toRate != null && toRate > 0.0) {
+            return (amount / fromRate) * toRate
         }
 
-        // Cross rate conversion via USD
-        val fromToUsdRate = currentRates[fromCode.uppercase()]
-        val toToUsdRate = currentRates[toCode.uppercase()]
-
-        if (fromToUsdRate != null && toToUsdRate != null && fromToUsdRate > 0.0) {
-            val usdAmount = amount / fromToUsdRate
-            return usdAmount * toToUsdRate
+        // Fallback to static cross-rates if one or both currencies are absent from currentRates
+        val fallbackRates = getStaticFallbackRates(fromUpper)
+        val fallbackRate = fallbackRates[toUpper]
+        if (fallbackRate != null && fallbackRate > 0.0) {
+            return amount * fallbackRate
         }
 
         return amount
@@ -181,6 +185,18 @@ class CurrencyRepository(context: Context) {
     ): List<HistoricalRatePoint> = withContext(Dispatchers.IO) {
         val result = mutableListOf<HistoricalRatePoint>()
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+
+        // Short-circuit identical currency pairs (avoids Frankfurter HTTP 422)
+        if (fromCode.equals(toCode, ignoreCase = true)) {
+            val cal = Calendar.getInstance()
+            cal.add(Calendar.DAY_OF_YEAR, -days)
+            val step = if (days > 60) 3 else 1
+            for (i in 0..days step step) {
+                result.add(HistoricalRatePoint(sdf.format(cal.time), 1.0))
+                cal.add(Calendar.DAY_OF_YEAR, step)
+            }
+            return@withContext result
+        }
 
         val calEnd = Calendar.getInstance()
         val endDateStr = sdf.format(calEnd.time)
@@ -201,7 +217,7 @@ class CurrencyRepository(context: Context) {
                     from = fromCode.uppercase(),
                     to = toCode.uppercase()
                 )
-                response.rates.forEach { (dateStr, map) ->
+                response.rates.toSortedMap().forEach { (dateStr, map) ->
                     map[toCode.uppercase()]?.let { rate ->
                         result.add(HistoricalRatePoint(dateStr, rate))
                     }
@@ -234,6 +250,7 @@ class CurrencyRepository(context: Context) {
     fun getFavoritePairs(): Flow<List<FavoritePairEntity>> = dao.getFavoritePairs().flowOn(Dispatchers.IO)
 
     suspend fun addFavorite(fromCode: String, toCode: String) = withContext(Dispatchers.IO) {
+        dao.deleteFavorite(fromCode, toCode)
         dao.insertFavorite(FavoritePairEntity(fromCode = fromCode, toCode = toCode))
     }
 
@@ -290,8 +307,7 @@ class CurrencyRepository(context: Context) {
     fun getFavoriteUnits(): Flow<List<FavoriteUnitPairEntity>> = dao.getFavoriteUnits().flowOn(Dispatchers.IO)
 
     suspend fun toggleFavoriteUnit(category: String, fromUnitId: String, toUnitId: String) = withContext(Dispatchers.IO) {
-        val currentFavs = dao.getFavoriteUnits()
-        // Check if exists
+        dao.deleteFavoriteUnit(fromUnitId, toUnitId)
         dao.insertFavoriteUnit(
             FavoriteUnitPairEntity(
                 category = category,

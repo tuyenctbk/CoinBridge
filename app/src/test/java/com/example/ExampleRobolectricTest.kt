@@ -316,6 +316,27 @@ class ExampleRobolectricTest {
     assertEquals(true, manager.isShared())
     assertEquals(com.common.engagement.PromptType.NONE, manager.checkPromptEligibility(now = after31Days))
   }
+
+  @Test
+  fun `test cross-currency conversion accuracy when active base differs from source currency`() = kotlinx.coroutines.runBlocking {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val repository = com.example.data.repository.CurrencyRepository(context)
+    val usdBasedRates = mapOf(
+      "USD" to 1.0,
+      "EUR" to 0.92,
+      "JPY" to 153.4
+    )
+
+    // Base -> Target (USD -> EUR)
+    assertEquals(92.0, repository.convertAmount(100.0, "USD", "EUR", usdBasedRates), 0.001)
+
+    // Target -> Base (EUR -> USD, e.g. Bill Splitter default)
+    assertEquals(100.0 / 0.92, repository.convertAmount(100.0, "EUR", "USD", usdBasedRates), 0.001)
+
+    // Cross-rate Target -> Target (JPY -> EUR via USD base)
+    val expectedEur = (15340.0 / 153.4) * 0.92
+    assertEquals(expectedEur, repository.convertAmount(15340.0, "JPY", "EUR", usdBasedRates), 0.001)
+  }
 }
 
 

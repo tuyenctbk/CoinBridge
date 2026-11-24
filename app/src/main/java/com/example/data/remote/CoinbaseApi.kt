@@ -7,13 +7,13 @@ import retrofit2.http.Query
 
 @JsonClass(generateAdapter = true)
 data class CoinbaseData(
-    @Json(name = "currency") val currency: String,
-    @Json(name = "rates") val rates: Map<String, String>
+    @param:Json(name = "currency") val currency: String,
+    @param:Json(name = "rates") val rates: Map<String, String>
 )
 
 @JsonClass(generateAdapter = true)
 data class CoinbaseRatesResponse(
-    @Json(name = "data") val data: CoinbaseData
+    @param:Json(name = "data") val data: CoinbaseData
 )
 
 interface CoinbaseApi {

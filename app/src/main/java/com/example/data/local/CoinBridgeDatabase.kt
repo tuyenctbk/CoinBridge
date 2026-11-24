@@ -29,7 +29,7 @@ abstract class CoinBridgeDatabase : RoomDatabase() {
                     context.applicationContext,
                     CoinBridgeDatabase::class.java,
                     "coinbridge_db"
-                ).fallbackToDestructiveMigration().build()
+                ).fallbackToDestructiveMigration(dropAllTables = true).build()
                 INSTANCE = instance
                 instance
             }

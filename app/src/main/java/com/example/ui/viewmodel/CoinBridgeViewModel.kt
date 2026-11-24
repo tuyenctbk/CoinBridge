@@ -101,7 +101,7 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
     private val _trendDaysRange = MutableStateFlow(30)
     val trendDaysRange: StateFlow<Int> = _trendDaysRange.asStateFlow()
 
-    private val _trendPoints = MutableStateFlow<List<HistoricalRatePoint>>(emptyMap<String, Double>().map { HistoricalRatePoint("", 0.0) })
+    private val _trendPoints = MutableStateFlow<List<HistoricalRatePoint>>(emptyList())
     val trendPoints: StateFlow<List<HistoricalRatePoint>> = _trendPoints.asStateFlow()
 
     private val _trendIsLoading = MutableStateFlow(false)
@@ -157,6 +157,7 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     private var refreshJob: Job? = null
+    private var trendsJob: Job? = null
 
     init {
         refreshRates()
@@ -214,9 +215,9 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
         val updated = ExpressionEvaluator.onKeyPress(_expressionInput.value, key)
         _expressionInput.value = updated
         _evaluatedAmount.value = ExpressionEvaluator.evaluate(updated)
-        recalculateConversions()
+        recalculateConversions(logToHistory = key == "=")
         if (key == "=") {
-            com.example.ui.donation.DonationManager.recordOperationSuccess(getApplication())
+            // MilestoneTracker.recordConversionSuccess internally notifies DonationManager
             com.example.ui.donation.MilestoneTracker.recordConversionSuccess(getApplication())
             trafficController.recordSuccessfulTask()
             userEngagementManager.recordSuccessfulOperation()
@@ -256,7 +257,7 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
         refreshRates()
     }
 
-    private fun recalculateConversions() {
+    private fun recalculateConversions(logToHistory: Boolean = false) {
         viewModelScope.launch {
             val amount = _evaluatedAmount.value
             val rates = _currentRates.value
@@ -269,8 +270,8 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
             }
             _convertedValues.value = map
 
-            // Log conversion if valid positive amount
-            if (amount > 0.0 && _targetCurrencies.value.isNotEmpty()) {
+            // Log conversion only when explicitly confirmed with '=' to avoid keystroke DB flooding
+            if (logToHistory && amount > 0.0 && _targetCurrencies.value.isNotEmpty()) {
                 val firstTarget = _targetCurrencies.value.first()
                 val converted = map[firstTarget.code] ?: 0.0
                 repository.logConversion(fromCode, firstTarget.code, amount, converted)
@@ -280,7 +281,19 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
 
     // Bill Splitter Functions
     fun setBillAmount(input: String) {
-        _billAmountInput.value = input
+        // Allow only valid decimal characters with at most one decimal point
+        val filtered = buildString {
+            var hasDot = false
+            for (c in input) {
+                if (c.isDigit()) {
+                    append(c)
+                } else if (c == '.' && !hasDot) {
+                    hasDot = true
+                    append(c)
+                }
+            }
+        }
+        _billAmountInput.value = filtered
         recalculateBill()
     }
 
@@ -348,7 +361,8 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun loadTrends() {
-        viewModelScope.launch {
+        trendsJob?.cancel()
+        trendsJob = viewModelScope.launch {
             _trendIsLoading.value = true
             val points = repository.getHistoricalTrends(
                 fromCode = _trendFromCurrency.value.code,
@@ -418,22 +432,24 @@ class CoinBridgeViewModel(application: Application) : AndroidViewModel(applicati
         _unitEvaluatedAmount.value = ExpressionEvaluator.evaluate(updated)
         recalculateUnitConversions()
         if (key == "=") {
-            com.example.ui.donation.DonationManager.recordOperationSuccess(getApplication())
+            // MilestoneTracker.recordConversionSuccess internally notifies DonationManager
             com.example.ui.donation.MilestoneTracker.recordConversionSuccess(getApplication())
-            trafficController.recordSuccessfulTask()
-            userEngagementManager.recordSuccessfulOperation()
-            evaluateEngagementPrompt(isCriticalFlowActive = false)
             logUnitConversion()
         }
     }
 
     var activeTab: String = "CONVERTER"
+    var isOverlayActive: Boolean = false
+
+    fun isHardwareCalcInputAllowed(): Boolean {
+        return !_isAppLocked.value && !isOverlayActive && (activeTab == "CONVERTER" || activeTab == "UNIT")
+    }
 
     fun onHardwareKeyInput(key: String) {
         when (activeTab) {
             "CONVERTER" -> onKeyInput(key)
             "UNIT" -> onUnitKeyInput(key)
-            else -> onKeyInput(key)
+            else -> Unit
         }
     }
 

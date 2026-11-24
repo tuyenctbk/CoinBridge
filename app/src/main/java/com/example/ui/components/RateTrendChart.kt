@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.model.HistoricalRatePoint
 import com.example.ui.calculator.ExpressionEvaluator.toCleanString
+import java.util.Locale
 
 @Composable
 fun RateTrendChart(
@@ -69,7 +70,7 @@ fun RateTrendChart(
     val gradientBottom = lineColor.copy(alpha = 0.0f)
     val gradientTop = lineColor.copy(alpha = 0.28f)
 
-    var selectedPointIndex by remember { mutableStateOf<Int?>(null) }
+    var selectedPointIndex by remember(points) { mutableStateOf<Int?>(null) }
 
     Surface(
         modifier = modifier
@@ -121,7 +122,7 @@ fun RateTrendChart(
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                 ) {
                     Text(
-                        text = "${if (isPositive) "+" else ""}${String.format("%.2f", changePercent)}%",
+                        text = "${if (isPositive) "+" else ""}${String.format(Locale.US, "%.2f", changePercent)}%",
                         fontWeight = FontWeight.Bold,
                         fontSize = 14.sp,
                         color = lineColor
@@ -208,8 +209,8 @@ fun RateTrendChart(
 
                     // Draw selected highlight dot & vertical guide line
                     selectedPointIndex?.let { index ->
+                        val point = points.getOrNull(index) ?: return@let
                         val x = index * (width / (points.size - 1))
-                        val point = points[index]
                         val normalizedY = ((point.rate - minRate) / range).toFloat()
                         val y = height - (normalizedY * (height * 0.75f)) - (height * 0.12f)
 

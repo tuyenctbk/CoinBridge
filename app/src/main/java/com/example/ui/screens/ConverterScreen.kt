@@ -90,6 +90,17 @@ fun ConverterScreen(
     var showTargetSheet by remember { mutableStateOf(false) }
     var showKeypad by remember { mutableStateOf(true) }
 
+    androidx.compose.runtime.DisposableEffect(showBaseSheet, showTargetSheet) {
+        if (showBaseSheet || showTargetSheet) {
+            viewModel.isOverlayActive = true
+        }
+        onDispose {
+            if (showBaseSheet || showTargetSheet) {
+                viewModel.isOverlayActive = false
+            }
+        }
+    }
+
     if (showBaseSheet) {
         CurrencySelectionSheet(
             title = "Select Base Currency",

@@ -1,6 +1,7 @@
 package com.example.ui.calculator
 
-import java.util.Stack
+import java.util.Locale
+import kotlin.math.abs
 
 object ExpressionEvaluator {
 
@@ -10,6 +11,10 @@ object ExpressionEvaluator {
             "⌫" -> {
                 if (currentInput.length <= 1) "0"
                 else currentInput.dropLast(1)
+            }
+            "=" -> {
+                if (currentInput.isBlank()) "0"
+                else evaluate(currentInput).toCleanString()
             }
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" -> {
                 if (currentInput == "0") key
@@ -107,6 +112,10 @@ object ExpressionEvaluator {
         while (idx < tokens.size) {
             val token = tokens[idx]
             if (token == "*" || token == "/") {
+                if (values.isEmpty()) {
+                    idx++
+                    continue
+                }
                 val nextVal = tokens.getOrNull(idx + 1)?.toDoubleOrNull() ?: 1.0
                 val prevVal = values.removeAt(values.size - 1)
                 val res = if (token == "*") prevVal * nextVal else if (nextVal != 0.0) prevVal / nextVal else 0.0
@@ -131,16 +140,22 @@ object ExpressionEvaluator {
             else if (op == "-") total -= nextVal
         }
 
-        return total
+        return if (total.isFinite()) total else 0.0
     }
 
     private fun isOpToken(token: String): Boolean = token == "+" || token == "-" || token == "*" || token == "/"
 
     fun Double.toCleanString(): String {
-        return if (this == this.toLong().toDouble()) {
-            this.toLong().toString()
-        } else {
-            String.format(java.util.Locale.US, "%.4f", this).trimEnd('0').trimEnd('.')
+        if (!this.isFinite() || this == 0.0) return "0"
+        val absVal = abs(this)
+        if (absVal <= 9e15 && this == this.toLong().toDouble()) {
+            return this.toLong().toString()
         }
+        val formatted = when {
+            absVal < 0.0001 -> String.format(Locale.US, "%.8f", this)
+            absVal < 1.0 -> String.format(Locale.US, "%.6f", this)
+            else -> String.format(Locale.US, "%.4f", this)
+        }.trimEnd('0').trimEnd('.')
+        return if (formatted == "-0" || formatted.isEmpty()) "0" else formatted
     }
 }

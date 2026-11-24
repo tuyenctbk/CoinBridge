@@ -15,6 +15,9 @@ interface CoinBridgeDao {
     @Query("SELECT * FROM cached_rates WHERE pairKey = :pairKey LIMIT 1")
     suspend fun getRate(pairKey: String): CachedRateEntity?
 
+    @Query("SELECT * FROM cached_rates WHERE fromCode = :fromCode")
+    suspend fun getRatesForBase(fromCode: String): List<CachedRateEntity>
+
     @Query("SELECT * FROM cached_rates")
     fun getAllCachedRates(): Flow<List<CachedRateEntity>>
 

@@ -108,7 +108,7 @@ fun FavoritesHistoryScreen(
 
     var showClearConfirmDialog by remember { mutableStateOf(false) }
 
-    val sdf = SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
+    val sdf = remember { SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault()) }
     val lastSyncFormatted = if (lastSync > 0) sdf.format(Date(lastSync)) else "Offline Cached"
 
     fun requestClearHistory() {
@@ -266,7 +266,7 @@ fun FavoritesHistoryScreen(
                     if (favoriteUnits.isEmpty()) {
                         item { EmptyCard(text = "No saved unit pairs yet. Tap the star icon on any unit conversion to save.") }
                     } else {
-                        items(favoriteUnits, key = { "${it.category}_${it.fromUnitId}_${it.toUnitId}" }) { fav ->
+                        items(favoriteUnits, key = { it.id }) { fav ->
                             FavoriteUnitItem(
                                 favorite = fav,
                                 onSelect = {
@@ -425,7 +425,7 @@ fun FavoritesHistoryScreen(
                 if (favoriteUnits.isEmpty()) {
                     item { EmptyCard(text = "No saved unit pairs yet. Tap the star icon on any unit conversion to save.") }
                 } else {
-                    items(favoriteUnits, key = { "${it.category}_${it.fromUnitId}_${it.toUnitId}" }) { fav ->
+                    items(favoriteUnits, key = { it.id }) { fav ->
                         FavoriteUnitItem(
                             favorite = fav,
                             onSelect = {

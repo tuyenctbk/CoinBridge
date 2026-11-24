@@ -8,19 +8,19 @@ import retrofit2.http.Query
 
 @JsonClass(generateAdapter = true)
 data class FrankfurterLatestResponse(
-    @Json(name = "amount") val amount: Double = 1.0,
-    @Json(name = "base") val base: String,
-    @Json(name = "date") val date: String,
-    @Json(name = "rates") val rates: Map<String, Double>
+    @param:Json(name = "amount") val amount: Double = 1.0,
+    @param:Json(name = "base") val base: String,
+    @param:Json(name = "date") val date: String,
+    @param:Json(name = "rates") val rates: Map<String, Double>
 )
 
 @JsonClass(generateAdapter = true)
 data class FrankfurterHistoricalResponse(
-    @Json(name = "amount") val amount: Double = 1.0,
-    @Json(name = "base") val base: String,
-    @Json(name = "start_date") val startDate: String,
-    @Json(name = "end_date") val endDate: String,
-    @Json(name = "rates") val rates: Map<String, Map<String, Double>>
+    @param:Json(name = "amount") val amount: Double = 1.0,
+    @param:Json(name = "base") val base: String,
+    @param:Json(name = "start_date") val startDate: String,
+    @param:Json(name = "end_date") val endDate: String,
+    @param:Json(name = "rates") val rates: Map<String, Map<String, Double>>
 )
 
 interface FrankfurterApi {

@@ -20,18 +20,19 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ShowChart
+import androidx.compose.material.icons.automirrored.outlined.ShowChart
 import androidx.compose.material.icons.filled.CurrencyExchange
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Restaurant
-import androidx.compose.material.icons.filled.ShowChart
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material.icons.filled.Straighten
 import androidx.compose.material.icons.outlined.CurrencyExchange
 import androidx.compose.material.icons.outlined.Restaurant
-import androidx.compose.material.icons.outlined.ShowChart
 import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material.icons.outlined.Straighten
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -91,7 +92,7 @@ enum class CoinBridgeTab(
     CONVERTER(R.string.tab_currency, Icons.Filled.CurrencyExchange, Icons.Outlined.CurrencyExchange),
     UNIT(R.string.tab_unit, Icons.Filled.Straighten, Icons.Outlined.Straighten),
     BILL_SPLITTER(R.string.tab_bill_splitter, Icons.Filled.Restaurant, Icons.Outlined.Restaurant),
-    TRENDS(R.string.tab_rate_trends, Icons.Filled.ShowChart, Icons.Outlined.ShowChart),
+    TRENDS(R.string.tab_rate_trends, Icons.AutoMirrored.Filled.ShowChart, Icons.AutoMirrored.Outlined.ShowChart),
     SAVED(R.string.tab_saved, Icons.Filled.Star, Icons.Outlined.Star);
 
     val title: String
@@ -122,11 +123,21 @@ fun CoinBridgeApp(
     val activeEngagementPrompt by viewModel.activeEngagementPrompt.collectAsState()
     val baseCurrency by viewModel.baseCurrency.collectAsState()
     val targetCurrencies by viewModel.targetCurrencies.collectAsState()
+    val favoritePairs by viewModel.favoritePairs.collectAsState()
     val isSupporter by DonationManager.isSupporter.collectAsState()
     val activeMilestone by MilestoneTracker.activeMilestone.collectAsState()
 
-    androidx.compose.runtime.LaunchedEffect(currentTab) {
+    val primaryTargetCode = targetCurrencies.firstOrNull()?.code ?: "EUR"
+    val isCurrentPairFavorite = favoritePairs.any {
+        it.fromCode == baseCurrency.code && it.toCode == primaryTargetCode
+    }
+
+    androidx.compose.runtime.LaunchedEffect(
+        currentTab, showSplash, showSupportScreen, showDonationSheet, activeMilestone, activeEngagementPrompt
+    ) {
         viewModel.activeTab = currentTab.name
+        viewModel.isOverlayActive = showSplash || showSupportScreen || showDonationSheet ||
+            activeMilestone != null || activeEngagementPrompt != PromptType.NONE
     }
 
     val context = LocalContext.current
@@ -238,15 +249,20 @@ fun CoinBridgeApp(
                     // Quick Favorite Star Toggle
                     IconButton(
                         onClick = {
-                            val target = targetCurrencies.firstOrNull()?.code ?: "EUR"
-                            viewModel.toggleFavoritePair(baseCurrency.code, target)
+                            viewModel.toggleFavoritePair(baseCurrency.code, primaryTargetCode)
+                            val msg = if (isCurrentPairFavorite) {
+                                "Removed ${baseCurrency.code} ➔ $primaryTargetCode from favorites"
+                            } else {
+                                "Saved ${baseCurrency.code} ➔ $primaryTargetCode to favorites"
+                            }
+                            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
                         },
                         modifier = Modifier
                             .testTag("star_favorite_topbar")
                             .dpadFocusable(shape = CircleShape)
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Star,
+                            imageVector = if (isCurrentPairFavorite) Icons.Default.Star else Icons.Default.StarBorder,
                             contentDescription = stringResource(R.string.tab_favorites),
                             tint = MaterialTheme.colorScheme.primary
                         )
@@ -356,7 +372,12 @@ fun CoinBridgeApp(
                     try {
                         context.startActivity(rateIntent)
                     } catch (e: Exception) {
-                        Toast.makeText(context, "Thank you for rating CoinBridge! ⭐⭐⭐⭐⭐", Toast.LENGTH_SHORT).show()
+                        try {
+                            val webUri = Uri.parse("https://play.google.com/store/apps/details?id=${context.packageName}")
+                            context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
+                        } catch (webEx: Exception) {
+                            Toast.makeText(context, "Thank you for rating CoinBridge!", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 },
                 onRedirectInternalFeedback = {

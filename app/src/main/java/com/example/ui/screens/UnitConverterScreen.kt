@@ -95,6 +95,17 @@ fun UnitConverterScreen(
     var showToSheet by remember { mutableStateOf(false) }
     var showKeypad by remember { mutableStateOf(true) }
 
+    androidx.compose.runtime.DisposableEffect(showFromSheet, showToSheet) {
+        if (showFromSheet || showToSheet) {
+            viewModel.isOverlayActive = true
+        }
+        onDispose {
+            if (showFromSheet || showToSheet) {
+                viewModel.isOverlayActive = false
+            }
+        }
+    }
+
     val isFavoritePair = favoriteUnits.any { it.fromUnitId == unitFrom.id && it.toUnitId == unitTo.id }
 
     if (showFromSheet) {

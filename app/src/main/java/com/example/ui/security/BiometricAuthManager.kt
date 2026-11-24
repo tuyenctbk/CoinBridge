@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Build
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_WEAK
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
@@ -39,9 +40,18 @@ object BiometricAuthManager {
         prefs.edit().putBoolean(KEY_BIOMETRIC_ENABLED, enabled).apply()
     }
 
+    private fun allowedAuthenticators(): Int {
+        // BIOMETRIC_STRONG | DEVICE_CREDENTIAL throws IllegalArgumentException on API < 30.
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            BIOMETRIC_STRONG or DEVICE_CREDENTIAL
+        } else {
+            BIOMETRIC_WEAK or DEVICE_CREDENTIAL
+        }
+    }
+
     fun checkBiometricStatus(context: Context): BiometricStatus {
         val biometricManager = BiometricManager.from(context)
-        val authenticators = BIOMETRIC_STRONG or DEVICE_CREDENTIAL
+        val authenticators = allowedAuthenticators()
 
         return when (val result = biometricManager.canAuthenticate(authenticators)) {
             BiometricManager.BIOMETRIC_SUCCESS -> {
@@ -139,9 +149,13 @@ object BiometricAuthManager {
 
         // Support Device Credential (PIN / Pattern / Password) along with Biometrics
         // Note: setNegativeButtonText cannot be set if DEVICE_CREDENTIAL is included
-        promptInfoBuilder.setAllowedAuthenticators(BIOMETRIC_STRONG or DEVICE_CREDENTIAL)
+        promptInfoBuilder.setAllowedAuthenticators(allowedAuthenticators())
 
-        val promptInfo = promptInfoBuilder.build()
-        biometricPrompt.authenticate(promptInfo)
+        try {
+            val promptInfo = promptInfoBuilder.build()
+            biometricPrompt.authenticate(promptInfo)
+        } catch (e: Exception) {
+            onError(e.localizedMessage ?: "Biometric authentication unavailable on this device")
+        }
     }
 }

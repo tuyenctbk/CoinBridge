@@ -41,4 +41,23 @@ class ExpressionEvaluatorTest {
         val pctResult = ExpressionEvaluator.onKeyPress(input, "%")
         assertEquals("2.5", pctResult)
     }
+
+    @Test
+    fun testEqualsKeyResolvesExpression() {
+        val resolved = ExpressionEvaluator.onKeyPress("50+25×2", "=")
+        assertEquals("100", resolved)
+    }
+
+    @Test
+    fun testDivisionByZeroAndNonFiniteSafety() {
+        assertEquals(0.0, ExpressionEvaluator.evaluate("10÷0"), 0.0001)
+        assertEquals("0", ExpressionEvaluator.run { Double.NaN.toCleanString() })
+        assertEquals("0", ExpressionEvaluator.run { Double.POSITIVE_INFINITY.toCleanString() })
+    }
+
+    @Test
+    fun testSmallCryptoPrecisionNotTruncatedToZero() {
+        val btcAmount = ExpressionEvaluator.run { 0.0000147.toCleanString() }
+        assertEquals("0.0000147", btcAmount)
+    }
 }
